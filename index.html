@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>University of the East Portal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+/* Custom style to prevent carousel distortion */
+.carousel-item {
+    min-height: 280px;
+}
+
+/* Red theme custom styles for Accordion */
+.accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #dc3545; /* Bootstrap Red */
+}
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1); /* Changes arrow icon to white */
+}
+.accordion-button:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+.accordion-body a {
+    color: #dc3545;
+}
+</style>
+</head>
+<body>
+
+<!-- RED NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand fw-bold">University Of The East</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">Profile</a>
+                <a href="#" class="nav-item nav-link">Messages</a>
+                <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="#" class="nav-item nav-link">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- CAROUSEL -->
+<div class="container-lg my-3">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/imageue.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/imageue2.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/imageue3.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+
+<!-- BUTTON GROUP -->
+<div class="container-lg my-3 text-center">
+    <div class="btn-group flex-wrap" role="group">
+        <button type="button" class="btn btn-outline-danger">UE Portal</button>
+        <button type="button" class="btn btn-danger">Apply Online</button>
+        <button type="button" class="btn btn-outline-danger">Enroll Online</button>
+        <button type="button" class="btn btn-outline-danger">Canvas</button>
+        <button type="button" class="btn btn-outline-danger">Web Email</button>
+    </div>
+</div>
+
+<!-- CARDS SECTION (ALL 8 CARDS) -->
+<div class="container-lg my-5">
+    <!-- NEWS HEADER -->
+    <h2 class="text-center text-danger fw-bold border-bottom pb-2 mb-4">Latest News & Campus Updates</h2>
+
+    <div class="row g-3 justify-content-center">
+        <!-- Card 1: Cris Pejer -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/pic.png" class="card-img-top" alt="Cris Pejer">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">Cris Pejer</h5>
+                    <p class="card-text">
+                        Bachelor of Science Major in Computer Engineering (BSCPE).
+                        <span class="collapse" id="desc1">
+                            That aims to be successful and soon be a graduate of this institution.
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc1" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal1">View Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Topnotcher -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/news.jpg" class="card-img-top" alt="Topnotcher">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">Topnotcher</h5>
+                    <p class="card-text">
+                        The UE College of Engineering - Manila proudly congratulates <strong>ENGR. ADRIAN VINCENT SONER</strong>...
+                        <span class="collapse" id="desc2">
+                            our February 2026 BS Mechanical Engineering graduate, for placing 9th in the August 2026 Mechanical Engineer Licensure with an outstanding 89.05% rating.
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc2" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal2">Read News</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: PATHFIT -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/news2.jpg" class="card-img-top" alt="PATHFIT Uniform">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">PATHFIT Uniform Selling</h5>
+                    <p class="card-text">
+                        Last day of the selling of PATHFIT uniforms for Both Manila and Caloocan Campuses...
+                        <span class="collapse" id="desc3">
+                            will be on Thursday, August 27, 2026.
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc3" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal3">Read News</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Fencing -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/news3.jpg" class="card-img-top" alt="Don Rayzel Geronimo">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">Congratulations Don Rayzel</h5>
+                    <p class="card-text">
+                        The University of the East proudly congratulates Don Rayzel Geronimo...
+                        <span class="collapse" id="desc4">
+                            for his performance at the 2026 Southeast Asian Fencing Federation Championship in Kuala Lumpur, Malaysia!
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc4" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal4">Read News</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Photo from UE (news4.jpg) -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/news4.jpg" class="card-img-top" alt="Photo from UE">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">Photo from UE</h5>
+                    <p class="card-text">
+                        Official photos and updates from the University of the East campus...
+                        <span class="collapse" id="desc5">
+                            Stay tuned for more campus events and announcements.
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc5" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal5">View Image</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Esports -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/news5.jpg" class="card-img-top" alt="Warriors">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">Warriors Hold Their Grounds</h5>
+                    <p class="card-text">
+                        The UE Red Warriors and UST finish their series at 1-1 ...
+                        <span class="collapse" id="desc6">
+                            with both squads claiming a point in the standings.
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc6" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal6">Read News</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7: Alumni -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/news6.jpg" class="card-img-top" alt="Alumni Reunion">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">35 To Go!</h5>
+                    <p class="card-text">
+                        The countdown continues! ⏰💙❤️ ...
+                        <span class="collapse" id="desc7">
+                            Only 35 days until we reunite at the UE Grand Alumni Reunion!
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc7" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal7">Read News</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8: Photo from UE (news7.jpg) -->
+        <div class="col-md-6 col-lg-auto">
+            <div class="card h-100" style="width: 300px;">
+                <img src="assets/news7.jpg" class="card-img-top" alt="Photo from UE">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">Photo from UE</h5>
+                    <p class="card-text">
+                        Highlights and photos from campus events...
+                        <span class="collapse" id="desc8">
+                            Check back for more details.
+                        </span>
+                        <a class="d-block small text-danger mt-1" data-bs-toggle="collapse" href="#desc8" role="button">Show More</a>
+                    </p>
+                    <button class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal8">View Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RED ACCORDION SECTION -->
+<div class="container-lg my-5">
+    <!-- ACCORDION HEADER -->
+    <h2 class="text-center text-danger fw-bold border-bottom pb-2 mb-4">Frequently Asked Questions & Links</h2>
+
+    <div class="accordion" id="myAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    1. Want to know about UE?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                <div class="accordion-body">
+                    <p>University of the East official portal. <a href="https://www.ue.edu.ph/mla/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    2. My First Git/VS Code Work
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#myAccordion">
+                <div class="accordion-body">
+                    <p>This is my first work repository. <a href="https://pejercrisgadiel-lab.github.io/ncp3106_2026_cgpejer/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                    3. My GitHub Link
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                <div class="accordion-body">
+                    <p>In case you are curious about my Git repository: <a href="https://github.com/pejercrisgadiel-lab/ncp3106_2026_cgpejer.git" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ALL 8 MODALS -->
+
+<!-- Modal 1 -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Cris Pejer - Full Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="assets/pic.png" class="img-fluid rounded mb-3" alt="Cris Pejer">
+        <p>Bachelor of Science Major in Computer Engineering (BSCPE).</p>
+        <p>That aims to be successful and soon be a graduate of this institution.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Topnotcher Announcement</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/news.jpg" class="img-fluid rounded mb-3" alt="Topnotcher">
+        <p>The UE College of Engineering - Manila proudly congratulates <strong>ENGR. ADRIAN VINCENT SONER</strong>, our February 2026 BS Mechanical Engineering graduate, for placing 9th in the August 2026 Mechanical Engineer Licensure with an outstanding 89.05% rating.</p>
+        <ul>
+            <li>⚙️ First-Time Takers: 72.73%</li>
+            <li>⚙️ Overall Passing Rate: 66.67%</li>
+            <li>🇵🇭 National Passing Rate: 36.95%</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">PATHFIT Uniform Selling Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/news2.jpg" class="img-fluid rounded mb-3" alt="PATHFIT">
+        <p>Last day of selling PATHFIT uniforms for Both Manila and Caloocan Campuses will be on Thursday, August 27, 2026.</p>
+        <p><strong>Locations:</strong></p>
+        <p>UE Manila: Gym 3 Entrance Gate, PE Building<br>UE Caloocan: Gym Entrance</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Don Rayzel Geronimo</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/news3.jpg" class="img-fluid rounded mb-3" alt="Don Rayzel">
+        <p>Congratulations to Don Rayzel Geronimo for representing UE and the Philippines at the 2026 SEAFF Junior & Cadet Championship in Malaysia!</p>
+        <ul>
+          <li>🥉 Cadet U17 Men’s Epee Individual</li>
+          <li>🥉 Junior U20 Men’s Epee Team</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Photo from UE</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="assets/news4.jpg" class="img-fluid rounded mb-3" alt="Photo from UE">
+        <p>University of the East Campus Photo Highlight.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Warriors Hold Their Grounds</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="assets/news5.jpg" class="img-fluid rounded mb-3" alt="Esports">
+        <p>The UE Red Warriors and UST finish their UAAP Esports series at 1-1 with both squads claiming a point in the standings.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 7 -->
+<div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">UE Grand Alumni Reunion</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="assets/news6.jpg" class="img-fluid rounded mb-3" alt="Alumni">
+        <p>Only 35 days until the UE Grand Alumni Reunion on September 26 at The Manila Hotel!</p>
+        <a href="https://uealumni.org" target="_blank" class="btn btn-outline-danger">Register Now</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 8 -->
+<div class="modal fade" id="modal8" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Photo from UE</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="assets/news7.jpg" class="img-fluid rounded mb-3" alt="Photo from UE">
+        <p>University of the East Campus Photo Highlight.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

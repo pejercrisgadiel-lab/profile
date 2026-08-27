@@ -1,0 +1,19 @@
+/* Active button (filled red) */
+.btn-primary, 
+.btn-primary:hover {
+  background-color: #dc3545 !important; /* Change to your preferred red hex code */
+  border-color: #dc3545 !important;
+  color: #ffffff;
+}
+
+/* Outline buttons (red text & border) */
+.btn-outline-primary {
+  color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+/* Hover state for outline buttons */
+.btn-outline-primary:hover {
+  background-color: #dc3545 !important;
+  color: #ffffff !important;
+}
