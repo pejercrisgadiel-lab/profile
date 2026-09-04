@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Computer Engineering Website</title>
+<title>Computer Engineering | Home</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -15,24 +15,17 @@
         overflow: hidden;
         border: 1px solid rgba(0, 0, 0, 0.06);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 24px 20px;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     
     .apple-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    .apple-card-title {
-        font-weight: 700;
-        font-size: 2.2rem;
-        color: #1d1d1f;
-        letter-spacing: -0.5px;
-    }
-
-    .apple-card-subtitle {
-        color: #515154;
-        font-size: 1.05rem;
-        font-weight: 400;
+        transform: translateY(-4px);
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.09);
     }
 
     /* Apple-style Pill Button */
@@ -40,10 +33,12 @@
         background-color: #0071e3;
         color: #ffffff;
         border-radius: 980px;
-        padding: 8px 20px;
+        padding: 8px 24px;
         font-weight: 500;
         font-size: 0.95rem;
         border: none;
+        text-decoration: none;
+        display: inline-block;
         transition: background-color 0.2s ease;
     }
 
@@ -52,31 +47,30 @@
         color: #ffffff;
     }
 
-    /* Image Wrapper aligned at the bottom */
+    /* Main Page Card Images */
     .card-img-container {
-        margin-top: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        margin-top: 16px;
+        width: 100%;
     }
 
     .card-img-container img {
-        max-width: 90%;
-        max-height: 280px;
+        width: 100%;
+        height: 280px;
         object-fit: contain;
+        border-radius: 12px;
+        display: block;
     }
 </style>
 </head>
-<body>
+<body class="bg-light">
 
 <div class="container-fluid px-4 my-4">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-3 shadow-sm mb-4">
+    <!-- NAVBAR (CONTAINS DROPDOWN FOR EXTRA PAGES) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-3 shadow-sm mb-4 px-3">
         <div class="container-fluid">
-            <!-- BRAND LOGO + TEXT -->
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <img src="assets/Computer Engineering.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                <span class="fw-bold"><strong>Computer Engineering</strong></span>
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="assets/cpeimg.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+                <span class="fw-bold">Computer Engineering</span>
             </a>
 
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -84,13 +78,26 @@
             </button>
             
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#cpeModal">What is CpE?</a>
-                    <a href="#" class="nav-item nav-link">CPE at UE</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Specializations</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Opportunities</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Faculty</a>
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="what-is-cpe.html" class="nav-item nav-link">What is CpE?</a>
+                    <a href="cpe-at-ue.html" class="nav-item nav-link">CPE at UE</a>
+                    <a href="specializations.html" class="nav-item nav-link">Specializations</a>
+                    <a href="opportunities.html" class="nav-item nav-link">Careers</a>
+                    <a href="faculty.html" class="nav-item nav-link">Faculty</a>
+                    
+                    <!-- DROPDOWN FOR ADDITIONAL PAGES -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-3" aria-labelledby="moreDropdown">
+                            <li><a href="scpes.html" class="dropdown-item">SCPES Organization</a></li>
+                            <li><a href="projects.html" class="dropdown-item">Student Projects</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="contact.html" class="dropdown-item">FAQ & Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,16 +105,13 @@
 
     <!-- CAROUSEL -->
     <div id="myCarousel" class="carousel slide mb-5 rounded-3 overflow-hidden shadow" data-bs-ride="carousel">
-        
-        <!-- Carousel Indicators -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
         </div>
         
-        <!-- Wrapper for Carousel Items -->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="assets/slide1.jpg" class="d-block w-100 object-fit-cover" alt="Slide 1">
@@ -123,7 +127,6 @@
             </div>
         </div>
 
-        <!-- Carousel Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -134,74 +137,81 @@
         </button>
     </div>
 
-    <!-- APPLE-STYLE CARDS SECTION (BELOW CAROUSEL) -->
-    <div class="row g-4 justify-content-center">
+    <!-- HERO SECTION -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold display-5">Shape the Future of Technology</h1>
+        <p class="text-secondary lead fs-4 col-md-8 mx-auto">
+            Welcome to the official portal of BS Computer Engineering at the University of the East—merging hardware engineering with cutting-edge software solutions.
+        </p>
+    </div>
+
+    <!-- FEATURED SECTIONS GRID -->
+    <div class="row g-4 justify-content-center mb-5">
         
-        <!-- CARD 1: Computer Engineering -->
-        <div class="col-md-6 col-lg-6">
-            <div class="apple-card p-4 text-center h-100 d-flex flex-column justify-content-between">
-                <div class="pt-3">
-                    <h2 class="apple-card-title mb-1">Computer Engineering</h2>
-                    <p class="apple-card-subtitle mb-3">What is Computer Engineering (CpE)?</p>
-                    <div class="d-flex justify-content-center gap-2 mb-2">
-                        <button class="btn btn-apple" data-bs-toggle="modal" data-bs-target="#cpeModal">Learn more</button>
-                    </div>
+        <!-- CARD 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="apple-card">
+                <div>
+                    <h3 class="fw-bold fs-4 mb-2">What is CpE?</h3>
+                    <p class="text-muted small">Learn how computer engineers integrate hardware architecture and software development.</p>
                 </div>
-                <div class="card-img-container">
-                    <img src="assets/Computer Engineer.jpg" alt="Computer Engineer" class="img-fluid rounded-3">
+                <div class="card-img-container my-3">
+                    <img src="assets/cpeabout2.png" alt="What is CpE">
+                </div>
+                <div>
+                    <a href="what-is-cpe.html" class="btn-apple">Explore Field</a>
                 </div>
             </div>
         </div>
 
-        <!-- CARD 2: CPE at UE -->
-        <div class="col-md-6 col-lg-6">
-            <div class="apple-card p-4 text-center h-100 d-flex flex-column justify-content-between">
-                <div class="pt-3">
-                    <h2 class="apple-card-title mb-1">CPE at UE</h2>
-                    <p class="apple-card-subtitle mb-3">Your Tomorrow Begins in the East.</p>
-                    <div class="d-flex justify-content-center gap-2 mb-2">
-                        <button class="btn btn-apple" data-bs-toggle="modal" data-bs-target="#cpeModal">Learn more</button>
-                    </div>
+        <!-- CARD 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="apple-card">
+                <div>
+                    <h3 class="fw-bold fs-4 mb-2">CpE at UE</h3>
+                    <p class="text-muted small">Discover our curriculum, state-of-the-art laboratories, and active student community.</p>
                 </div>
-                <div class="card-img-container">
-                    <img src="assets/cpeimg.jpg" alt="CPE at UE" class="img-fluid rounded-3">
+                <div class="card-img-container my-3">
+                    <img src="assets/cpeue.png" alt="CPE at UE">
+                </div>
+                <div>
+                    <a href="cpe-at-ue.html" class="btn-apple">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="apple-card">
+                <div>
+                    <h3 class="fw-bold fs-4 mb-2">Specializations</h3>
+                    <p class="text-muted small">Dive into AI, Robotics, Embedded Systems, IoT, and Computer Networks.</p>
+                </div>
+                <div class="card-img-container my-3">
+                    <img src="assets/cpeabout3.png" alt="Specializations">
+                </div>
+                <div>
+                    <a href="specializations.html" class="btn-apple">View Fields</a>
                 </div>
             </div>
         </div>
 
     </div>
-</div>
 
-<!-- MODAL FOR CPE DETAILS -->
-<div class="modal fade" id="cpeModal" tabindex="-1" aria-labelledby="cpeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content rounded-4 border-0 shadow">
-            <div class="modal-header border-bottom-0 pb-0">
-                <h5 class="modal-title fw-bold fs-4 ms-2 mt-2" id="cpeModalLabel">Computer Engineering (CpE)</h5>
-                <button type="button" class="btn-close me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- FOOTER (FULFILLS DESIGN REQUIREMENT #2) -->
+    <footer class="bg-white rounded-3 shadow-sm py-4 mt-5 border-top">
+        <div class="container text-center">
+            <p class="fw-bold mb-1">BS Computer Engineering — University of the East</p>
+            <p class="text-muted small mb-2">College of Engineering | Department of Computer Engineering</p>
+            <div class="d-flex justify-content-center gap-3 small mb-2">
+                <a href="index.html" class="text-decoration-none text-secondary">Home</a>
+                <a href="what-is-cpe.html" class="text-decoration-none text-secondary">About</a>
+                <a href="scpes.html" class="text-decoration-none text-secondary">SCPES</a>
+                <a href="contact.html" class="text-decoration-none text-secondary">Contact & FAQ</a>
             </div>
-            <div class="modal-body p-4 text-center">
-                <img src="assets/Computer Engineer.jpg" alt="Computer Engineer Banner" class="img-fluid rounded-3 shadow-sm mb-4">
-                
-                <div class="text-start px-md-3">
-                    <h4 class="fw-bold text-dark mb-3">What is Computer Engineering?</h4>
-                    <p class="text-secondary lead fs-6">
-                        Computer Engineering (CpE) is a discipline that integrates electronic engineering and computer sciences to design, develop, and test computer systems and hardware components.
-                    </p>
-                    <hr class="my-4 text-muted">
-                    <h5 class="fw-bold text-dark mb-2">Key Areas of Study:</h5>
-                    <ul class="text-secondary">
-                        <li><strong>Hardware Design:</strong> Microprocessors, embedded circuits, and IoT devices.</li>
-                        <li><strong>Software Development:</strong> Firmware, operating systems, and network protocols.</li>
-                        <li><strong>System Integration:</strong> Combining hardware and software for specialized technology solutions.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="modal-footer border-top-0 pt-0">
-                <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-            </div>
+            <p class="text-muted extra-small mb-0" style="font-size: 0.8rem;">&copy; UE Computer Engineering. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
 </div>
 
 </body>
