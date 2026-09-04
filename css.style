@@ -1,0 +1,20 @@
+body {
+    background-color: #f8f9fa;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(220, 53, 69, 0.06) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(0, 113, 227, 0.06) 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body {
+    background: linear-gradient(180deg, #fbfbfd 0%, #ecefe6 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body {
+    background: linear-gradient(180deg, #fff5f5 0%, #f8f9fa 40%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
