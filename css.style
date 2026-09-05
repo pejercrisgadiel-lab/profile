@@ -18,3 +18,57 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
 }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* keep your existing body background styles here */
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em; /* keeps tight, sharp headings */
+}
+
+/* UNIFORM CAROUSEL CONTAINER */
+.carousel-item {
+    height: 450px;
+    background-color: #111111; /* Neutral dark backdrop for empty space */
+}
+
+/* FIT WHOLE IMAGE WITHOUT CROPPING */
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* Displays 100% of the image */
+    object-position: center;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 260px;
+    }
+}
+
+.carousel-item {
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Keeps the main photo crisp and whole */
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive mobile height */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 260px;
+    }
+}
