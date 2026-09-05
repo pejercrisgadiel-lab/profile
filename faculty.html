@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faculty | Computer Engineering</title>
+
+<!-- GOOGLE FONTS (Space Grotesk + Plus Jakarta Sans) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    /* GLOBAL FONTS & BACKGROUND */
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f8f9fa;
+        background-image: 
+            radial-gradient(at 0% 0%, rgba(220, 53, 69, 0.06) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(0, 113, 227, 0.06) 0px, transparent 50%);
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    /* HEADINGS & ACCENT TEXT */
+    h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: -0.02em;
+    }
+
+    /* SINGLE SUBPAGE HERO BANNER */
+    .subpage-banner {
+        height: 380px;
+        background-color: #0f1115;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .subpage-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @media (max-width: 768px) {
+        .subpage-banner {
+            height: 220px;
+        }
+    }
+
+    /* CLICKABLE FACULTY APPLE-CARD */
+    .faculty-card {
+        background-color: #fbfbfd;
+        border-radius: 22px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 24px 20px;
+        text-align: center;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .faculty-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .faculty-avatar-container {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 16px auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #0071e3;
+    }
+
+    .faculty-avatar-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* APPLE PILL BUTTON */
+    .btn-apple {
+        background-color: #0071e3;
+        color: #ffffff;
+        border-radius: 980px;
+        padding: 8px 24px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border: none;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-apple:hover {
+        background-color: #0077ed;
+        color: #ffffff;
+    }
+
+    /* MODAL DIALOG STYLING */
+    .modal-dialog.modal-extra-wide,
+    div.modal-dialog.modal-extra-wide {
+        max-width: 92vw !important;
+        width: 92vw !important;
+        margin: 15px auto !important;
+    }
+
+    .modal-extra-wide .modal-content {
+        border-radius: 24px !important;
+        border: none !important;
+        overflow: hidden !important;
+        background-color: #ffffff !important;
+    }
+
+    .modal-extra-wide .modal-faculty-img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        border-radius: 16px !important;
+    }
+
+    /* HIGH-CONTRAST READABLE EMAIL BANNER */
+    .email-banner-box {
+        background-color: #1c1e21;
+        border-radius: 12px;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .email-banner-box .label-text {
+        color: #a1a1a6;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+    }
+
+    .email-banner-box .email-link {
+        color: #ffcc00;
+        font-weight: 700;
+        font-size: 1.25rem;
+        text-decoration: underline;
+        word-break: break-all;
+    }
+
+    .email-banner-box .email-link:hover {
+        color: #ffe066;
+    }
+</style>
+</head>
+<body>
+
+<div class="container-fluid px-4 my-4">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-3 shadow-sm mb-4 px-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="assets/cpeimg.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+                <span class="fw-bold">Computer Engineering</span>
+            </a>
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto fw-medium">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="what-is-cpe.html" class="nav-item nav-link">What is CpE?</a>
+                    <a href="cpe-at-ue.html" class="nav-item nav-link">CPE at UE</a>
+                    <a href="specializations.html" class="nav-item nav-link">Specializations</a>
+                    <a href="opportunities.html" class="nav-item nav-link">Careers</a>
+                    <a href="faculty.html" class="nav-item nav-link active">Faculty</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-3" aria-labelledby="moreDropdown">
+                            <li><a href="scpes.html" class="dropdown-item">SCPES Organization</a></li>
+                            <li><a href="projects.html" class="dropdown-item">Student Projects</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="contact.html" class="dropdown-item">FAQ & Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SINGLE HERO BANNER -->
+    <div class="subpage-banner mb-5 rounded-3 overflow-hidden shadow">
+        <img src="assets/faculty.png" alt="Computer Engineering Faculty Banner">
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold display-5">Meet Our Faculty</h1>
+        <p class="text-secondary lead fs-4 col-md-8 mx-auto">
+            Dedicated educators and industry experts shaping the next generation of computer engineers.
+        </p>
+    </div>
+
+    <!-- FACULTY CARDS GRID -->
+    <div class="row g-4 justify-content-center mb-5">
+        
+        <!-- Faculty Member 1: Sir EJ -->
+        <div class="col-md-6 col-lg-4">
+            <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModalEJ">
+                <div>
+                    <div class="faculty-avatar-container">
+                        <img src="assets/ej-melendez.jpg" alt="Errol John Antonio Melendez">
+                    </div>
+                    <h3 class="fw-bold fs-4 mb-1">Errol John Melendez</h3>
+                    <p class="text-primary fw-semibold small mb-2">Department Head, CpE</p>
+                    <p class="text-muted small">BSCpE | UN SDGs & Project Innovation</p>
+                </div>
+                <div class="mt-3">
+                    <button class="btn-apple btn-sm w-100">View Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faculty Member 2: Ma'am Lim -->
+        <div class="col-md-6 col-lg-4">
+            <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModalLim">
+                <div>
+                    <div class="faculty-avatar-container">
+                        <img src="assets/mary-ann-lim.png" alt="Mary Ann Limkian">
+                    </div>
+                    <h3 class="fw-bold fs-4 mb-1">Mary Ann Limkian</h3>
+                    <p class="text-primary fw-semibold small mb-2">Faculty Professor</p>
+                    <p class="text-muted small">BSCpE | Computer Networks & Architecture</p>
+                </div>
+                <div class="mt-3">
+                    <button class="btn-apple btn-sm w-100">View Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faculty Member 3: Sir Joe -->
+        <div class="col-md-6 col-lg-4">
+            <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModalJoe">
+                <div>
+                    <div class="faculty-avatar-container">
+                        <img src="assets/joemhel-coral.png" alt="Joemhel John Coral">
+                    </div>
+                    <h3 class="fw-bold fs-4 mb-1">Joemhel John Coral</h3>
+                    <p class="text-primary fw-semibold small mb-2">Faculty Professor</p>
+                    <p class="text-muted small">BSCpE | OOP, Microprocessors & Software</p>
+                </div>
+                <div class="mt-3">
+                    <button class="btn-apple btn-sm w-100">View Profile</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== FACULTY MODALS ==================== -->
+
+    <!-- Modal 1: Sir EJ -->
+    <div class="modal fade" id="facultyModalEJ" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-extra-wide">
+            <div class="modal-content shadow-lg p-3">
+                <div class="modal-header border-0 pb-1">
+                    <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0 text-center">
+                    <img src="assets/faculty-sir-ej.png" class="modal-faculty-img shadow-sm mb-3" alt="Errol John Antonio Melendez">
+                    <div class="email-banner-box my-2">
+                        <span class="label-text">Contact Email:</span>
+                        <a href="mailto:melendez.erroljohn@ue.edu.ph" class="email-link">melendez.erroljohn@ue.edu.ph</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Ma'am Lim -->
+    <div class="modal fade" id="facultyModalLim" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-extra-wide">
+            <div class="modal-content shadow-lg p-3">
+                <div class="modal-header border-0 pb-1">
+                    <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0 text-center">
+                    <img src="assets/faculty-maam-lim.png" class="modal-faculty-img shadow-sm mb-3" alt="Mary Ann Limkian">
+                    <div class="email-banner-box my-2">
+                        <span class="label-text">Contact Email:</span>
+                        <a href="mailto:limkian.maryann@ue.edu.ph" class="email-link">limkian.maryann@ue.edu.ph</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Sir Joe -->
+    <div class="modal fade" id="facultyModalJoe" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-extra-wide">
+            <div class="modal-content shadow-lg p-3">
+                <div class="modal-header border-0 pb-1">
+                    <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0 text-center">
+                    <img src="assets/faculty-sir-joe.png" class="modal-faculty-img shadow-sm mb-3" alt="Joemhel John Coral">
+                    <div class="email-banner-box my-2">
+                        <span class="label-text">Contact Email:</span>
+                        <a href="mailto:coral_joemheljohn@ue.edu.ph" class="email-link">coral_joemheljohn@ue.edu.ph</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white rounded-3 shadow-sm py-4 mt-5 border-top">
+        <div class="container text-center">
+            <p class="fw-bold mb-1">BS Computer Engineering — University of the East</p>
+            <p class="text-muted small mb-2">College of Engineering | Department of Computer Engineering</p>
+            <div class="d-flex justify-content-center gap-3 small mb-2">
+                <a href="index.html" class="text-decoration-none text-secondary">Home</a>
+                <a href="what-is-cpe.html" class="text-decoration-none text-secondary">About</a>
+                <a href="scpes.html" class="text-decoration-none text-secondary">SCPES</a>
+                <a href="contact.html" class="text-decoration-none text-secondary">Contact & FAQ</a>
+            </div>
+            <p class="text-muted extra-small mb-0" style="font-size: 0.8rem;">&copy; UE Computer Engineering. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

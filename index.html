@@ -31,26 +31,6 @@
         letter-spacing: -0.02em;
     }
 
-    /* UNIFORM CAROUSEL CONTAINER (PREVENTS CROPPING) */
-    .carousel-item {
-        height: 450px;
-        background-color: #0f1115; /* Dark background to pad wide/tall images cleanly */
-    }
-
-    .carousel-item img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain; /* Displays full image without cutting off faces/text */
-        object-position: center;
-    }
-
-    /* Mobile height adjustment */
-    @media (max-width: 768px) {
-        .carousel-item {
-            height: 260px;
-        }
-    }
-
     /* Apple-Style Card Styling */
     .apple-card {
         background-color: #fbfbfd;
@@ -152,24 +132,20 @@
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4"></button>
         </div>
         
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/slide1.jpg" class="d-block" alt="Slide 1">
+                <img src="assets/slide1.jpg" class="d-block w-100 object-fit-cover" alt="Slide 1">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide2.jpg" class="d-block" alt="Slide 2">
+                <img src="assets/slide2.jpg" class="d-block w-100 object-fit-cover" alt="Slide 2">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide3.jpg" class="d-block" alt="Slide 3">
+                <img src="assets/slide3.jpg" class="d-block w-100 object-fit-cover" alt="Slide 3">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide4.jpg" class="d-block" alt="Slide 4">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/slide5.jpg" class="d-block" alt="Slide 5">
+                <img src="assets/slide3.jpg" class="d-block w-100 object-fit-cover" alt="Slide 4">
             </div>
         </div>
 
