@@ -1,99 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Computer Engineering | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BS Computer Engineering | Home</title>
 
-<!-- GOOGLE FONTS (Space Grotesk + Plus Jakarta Sans) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- GOOGLE FONTS (Space Grotesk + Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BOOTSTRAP 5 CSS & JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<style>
-    /* GLOBAL FONTS */
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #f8f9fa;
-        background-image: 
-            radial-gradient(at 0% 0%, rgba(220, 53, 69, 0.06) 0px, transparent 50%),
-            radial-gradient(at 100% 0%, rgba(0, 113, 227, 0.06) 0px, transparent 50%);
-        background-attachment: fixed;
-        min-height: 100vh;
-    }
+    <style>
+        /* 1. VIBRANT MULTI-COLOR MESH BACKGROUND (Tech Blue + UE Red Glow) */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f0f4f9;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 45%),
+                radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.12) 0px, transparent 45%),
+                radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
 
-    /* HEADINGS & ACCENT TEXT */
-    h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
-        font-family: 'Space Grotesk', sans-serif;
-        letter-spacing: -0.02em;
-    }
+        /* 2. HEADINGS & GRADIENT ACCENTS */
+        h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
 
-    /* Apple-Style Card Styling */
-    .apple-card {
-        background-color: #fbfbfd;
-        border-radius: 22px;
-        overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        padding: 24px 20px;
-        text-align: center;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-    .apple-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.09);
-    }
+        /* Gradient Text Headline */
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #0f172a 20%, #1e40af 60%, #e11d48 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    /* Apple-style Pill Button */
-    .btn-apple {
-        background-color: #0071e3;
-        color: #ffffff;
-        border-radius: 980px;
-        padding: 8px 24px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        border: none;
-        text-decoration: none;
-        display: inline-block;
-        transition: background-color 0.2s ease;
-    }
+        /* Navbar Custom Highlights */
+        .navbar {
+            border: 1px solid rgba(37, 99, 235, 0.12);
+        }
 
-    .btn-apple:hover {
-        background-color: #0077ed;
-        color: #ffffff;
-    }
+        .nav-link.active {
+            color: #2563eb !important;
+            font-weight: 700;
+        }
 
-    /* Main Page Card Images */
-    .card-img-container {
-        margin-top: 16px;
-        width: 100%;
-    }
+        /* 3. RESPONSIVE CAROUSEL */
+        .carousel-item {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+            max-height: 520px;
+            background-color: #ffffff;
+        }
 
-    .card-img-container img {
-        width: 100%;
-        height: 280px;
-        object-fit: contain;
-        border-radius: 12px;
-        display: block;
-    }
-</style>
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item {
+                aspect-ratio: 16 / 9;
+                max-height: 280px;
+            }
+        }
+
+        /* 4. APPLE-STYLE VIBRANT CARDS */
+        .apple-card {
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 26px 22px;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        /* Vibrant Top Border Accent for Cards */
+        .apple-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #6366f1, #e11d48);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .apple-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(37, 99, 235, 0.15);
+            border-color: rgba(37, 99, 235, 0.25);
+        }
+
+        /* Category Badges on Cards */
+        .card-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+
+        .badge-blue { background-color: #eff6ff; color: #1d4ed8; }
+        .badge-red { background-color: #fff1f2; color: #e11d48; }
+        .badge-purple { background-color: #f5f3ff; color: #6d28d9; }
+        .badge-cyan { background-color: #ecfeff; color: #0891b2; }
+
+        /* 5. VIBRANT GRADIENT BUTTONS */
+        .btn-apple {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            border-radius: 980px;
+            padding: 9px 26px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-apple:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+            transform: scale(1.02);
+        }
+
+        /* 6. CARD IMAGES */
+        .card-img-container {
+            margin-top: 12px;
+            width: 100%;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 260px;
+            object-fit: contain;
+            border-radius: 12px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container-fluid px-4 my-4">
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-3 shadow-sm mb-4 px-3">
         <div class="container-fluid">
             <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <img src="assets/cpeimg.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                <span class="fw-bold">Computer Engineering</span>
+                <img src="assets/cpeimg.jpg" alt="CpE Logo" width="32" height="32" class="d-inline-block align-text-top me-2 rounded">
+                <span class="fw-bold text-dark">Computer Engineering</span>
             </a>
 
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -125,8 +202,8 @@
         </div>
     </nav>
 
-    <!-- CAROUSEL -->
-    <div id="myCarousel" class="carousel slide mb-5 rounded-3 overflow-hidden shadow" data-bs-ride="carousel">
+    <!-- BANNER CAROUSEL -->
+    <div id="myCarousel" class="carousel slide mb-5 rounded-3 overflow-hidden shadow-lg" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
@@ -136,16 +213,16 @@
         
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/slide1.jpg" class="d-block w-100 object-fit-cover" alt="Slide 1">
+                <img src="assets/slide1.jpg" alt="Slide 1">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide2.jpg" class="d-block w-100 object-fit-cover" alt="Slide 2">
+                <img src="assets/slide2.jpg" alt="Slide 2">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide3.jpg" class="d-block w-100 object-fit-cover" alt="Slide 3">
+                <img src="assets/slide3.jpg" alt="Slide 3">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide3.jpg" class="d-block w-100 object-fit-cover" alt="Slide 4">
+                <img src="assets/slide5.jpg" alt="Slide 4">
             </div>
         </div>
 
@@ -159,10 +236,10 @@
         </button>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION WITH GRADIENT HEADLINE -->
     <div class="text-center mb-5">
-        <h1 class="fw-bold display-5">Shape the Future of Technology</h1>
-        <p class="text-secondary lead fs-4 col-md-8 mx-auto">
+        <h1 class="fw-bold display-5 hero-gradient-text">Shape the Future of Technology</h1>
+        <p class="text-secondary lead fs-4 col-md-8 mx-auto fw-normal">
             Welcome to the official portal of BS Computer Engineering at the University of the East—merging hardware engineering with cutting-edge software solutions.
         </p>
     </div>
@@ -173,7 +250,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="apple-card">
                 <div>
-                    <h3 class="fw-bold fs-4 mb-2">What is CpE?</h3>
+                    <span class="card-badge badge-blue">Overview</span>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">What is CpE?</h3>
                     <p class="text-muted small">Learn how computer engineers integrate hardware architecture and software development.</p>
                 </div>
                 <div class="card-img-container my-3">
@@ -188,7 +266,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="apple-card">
                 <div>
-                    <h3 class="fw-bold fs-4 mb-2">CpE at UE</h3>
+                    <span class="card-badge badge-red">Campus Life</span>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">CpE at UE</h3>
                     <p class="text-muted small">Discover our curriculum, state-of-the-art laboratories, and active student community.</p>
                 </div>
                 <div class="card-img-container my-3">
@@ -203,7 +282,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="apple-card">
                 <div>
-                    <h3 class="fw-bold fs-4 mb-2">Specializations</h3>
+                    <span class="card-badge badge-purple">Tracks</span>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">Specializations</h3>
                     <p class="text-muted small">Dive into AI, Robotics, Embedded Systems, IoT, and Computer Networks.</p>
                 </div>
                 <div class="card-img-container my-3">
@@ -218,7 +298,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="apple-card">
                 <div>
-                    <h3 class="fw-bold fs-4 mb-2">Opportunities</h3>
+                    <span class="card-badge badge-cyan">Careers</span>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">Opportunities</h3>
                     <p class="text-muted small">Explore career paths and research opportunities in computer engineering.</p>
                 </div>
                 <div class="card-img-container my-3">
@@ -233,7 +314,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="apple-card">
                 <div>
-                    <h3 class="fw-bold fs-4 mb-2">Faculty</h3>
+                    <span class="card-badge badge-blue">Faculty</span>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">Faculty</h3>
                     <p class="text-muted small">Meet our dedicated faculty members and their research interests.</p>
                 </div>
                 <div class="card-img-container my-3">
@@ -248,7 +330,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="apple-card">
                 <div>
-                    <h3 class="fw-bold fs-4 mb-2">SCPES Community</h3>
+                    <span class="card-badge badge-red">Community</span>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">SCPES Community</h3>
                     <p class="text-muted small">Join our community of computer engineering students and alumni.</p>
                 </div>
                 <div class="card-img-container my-3">
@@ -265,7 +348,7 @@
     <!-- FOOTER -->
     <footer class="bg-white rounded-3 shadow-sm py-4 mt-5 border-top">
         <div class="container text-center">
-            <p class="fw-bold mb-1">BS Computer Engineering — University of the East</p>
+            <p class="fw-bold mb-1 text-dark">BS Computer Engineering — University of the East</p>
             <p class="text-muted small mb-2">College of Engineering | Department of Computer Engineering</p>
             <div class="d-flex justify-content-center gap-3 small mb-2">
                 <a href="index.html" class="text-decoration-none text-secondary">Home</a>
@@ -276,6 +359,7 @@
             <p class="text-muted extra-small mb-0" style="font-size: 0.8rem;">&copy; UE Computer Engineering. All rights reserved.</p>
         </div>
     </footer>
+
 </div>
 
 </body>

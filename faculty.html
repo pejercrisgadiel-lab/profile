@@ -3,41 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Faculty | Computer Engineering</title>
+<title>Faculty | BS Computer Engineering</title>
 
 <!-- GOOGLE FONTS (Space Grotesk + Plus Jakarta Sans) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
+<!-- BOOTSTRAP 5 & BOOTSTRAP ICONS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
-    /* GLOBAL FONTS & BACKGROUND */
+    /* 1. VIBRANT MULTI-COLOR MESH BACKGROUND */
     body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #f8f9fa;
+        background-color: #f0f4f9;
         background-image: 
-            radial-gradient(at 0% 0%, rgba(220, 53, 69, 0.06) 0px, transparent 50%),
-            radial-gradient(at 100% 0%, rgba(0, 113, 227, 0.06) 0px, transparent 50%);
+            radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 45%),
+            radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.12) 0px, transparent 45%),
+            radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
         background-attachment: fixed;
         min-height: 100vh;
     }
 
-    /* HEADINGS & ACCENT TEXT */
+    /* 2. HEADINGS & GRADIENT ACCENTS */
     h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
         font-family: 'Space Grotesk', sans-serif;
         letter-spacing: -0.02em;
     }
 
-    /* SINGLE SUBPAGE HERO BANNER */
+    .hero-gradient-text {
+        background: linear-gradient(135deg, #0f172a 20%, #1e40af 60%, #e11d48 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* NAVBAR CUSTOM HIGHLIGHTS */
+    .navbar {
+        border: 1px solid rgba(37, 99, 235, 0.12);
+    }
+
+    .nav-link.active {
+        color: #2563eb !important;
+        font-weight: 700;
+    }
+
+    /* 3. SUBPAGE HERO BANNER */
     .subpage-banner {
         height: 380px;
         background-color: #0f1115;
         display: flex;
         align-items: center;
         justify-content: center;
+        border: 1px solid rgba(37, 99, 235, 0.12);
     }
 
     .subpage-banner img {
@@ -53,25 +73,40 @@
         }
     }
 
-    /* CLICKABLE FACULTY APPLE-CARD */
+    /* 4. FACULTY CARDS */
     .faculty-card {
-        background-color: #fbfbfd;
-        border-radius: 22px;
+        background-color: #ffffff;
+        border-radius: 24px;
         overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        padding: 24px 20px;
+        border: 1px solid rgba(37, 99, 235, 0.08);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 26px 22px;
         text-align: center;
         height: 100%;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
+    }
+
+    /* Gradient Top Border Accent */
+    .faculty-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #2563eb, #6366f1, #e11d48);
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
     }
     
     .faculty-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.1);
+        transform: translateY(-6px);
+        box-shadow: 0 16px 35px rgba(37, 99, 235, 0.15);
+        border-color: rgba(37, 99, 235, 0.25);
     }
 
     .faculty-avatar-container {
@@ -80,7 +115,8 @@
         margin: 0 auto 16px auto;
         border-radius: 50%;
         overflow: hidden;
-        border: 3px solid #0071e3;
+        border: 3px solid #2563eb;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
     }
 
     .faculty-avatar-container img {
@@ -89,9 +125,25 @@
         object-fit: cover;
     }
 
-    /* APPLE PILL BUTTON */
+    /* Badges */
+    .card-badge {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 4px 12px;
+        border-radius: 50px;
+        margin-bottom: 12px;
+    }
+
+    .badge-blue { background-color: #eff6ff; color: #1d4ed8; }
+    .badge-red { background-color: #fff1f2; color: #e11d48; }
+    .badge-purple { background-color: #f5f3ff; color: #6d28d9; }
+
+    /* 5. VIBRANT GRADIENT BUTTON */
     .btn-apple {
-        background-color: #0071e3;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
         color: #ffffff;
         border-radius: 980px;
         padding: 8px 24px;
@@ -100,19 +152,21 @@
         border: none;
         text-decoration: none;
         display: inline-block;
-        transition: background-color 0.2s ease;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        transition: all 0.2s ease;
     }
 
     .btn-apple:hover {
-        background-color: #0077ed;
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
         color: #ffffff;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+        transform: scale(1.02);
     }
 
-    /* MODAL DIALOG STYLING */
-    .modal-dialog.modal-extra-wide,
-    div.modal-dialog.modal-extra-wide {
-        max-width: 92vw !important;
-        width: 92vw !important;
+    /* 6. MODAL STYLING */
+    .modal-dialog.modal-extra-wide {
+        max-width: 1050px !important;
+        width: 95vw !important;
         margin: 15px auto !important;
     }
 
@@ -123,55 +177,67 @@
         background-color: #ffffff !important;
     }
 
-    .modal-extra-wide .modal-faculty-img {
+    .modal-faculty-img {
         width: 100% !important;
         height: auto !important;
         display: block !important;
         border-radius: 16px !important;
     }
 
-    /* HIGH-CONTRAST READABLE EMAIL BANNER */
     .email-banner-box {
-        background-color: #1c1e21;
-        border-radius: 12px;
-        padding: 14px 20px;
+        background-color: #e0f2fe;
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        border-radius: 18px;
+        padding: 18px 24px;
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 10px;
+        justify-content: space-between;
+        gap: 15px;
         flex-wrap: wrap;
     }
 
     .email-banner-box .label-text {
-        color: #a1a1a6;
-        font-weight: 600;
+        color: #0f172a;
+        font-weight: 700;
         text-transform: uppercase;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         letter-spacing: 0.05em;
     }
 
-    .email-banner-box .email-link {
-        color: #ffcc00;
-        font-weight: 700;
-        font-size: 1.25rem;
-        text-decoration: underline;
-        word-break: break-all;
+    .social-icon-btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        color: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
     }
 
-    .email-banner-box .email-link:hover {
-        color: #ffe066;
+    .social-icon-btn:hover {
+        transform: translateY(-3px) scale(1.08);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
+
+    .icon-fb { background-color: #1877f2; }
+    .icon-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+    .icon-email { background-color: #ea4335; }
 </style>
 </head>
 <body>
 
 <div class="container-fluid px-4 my-4">
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-3 shadow-sm mb-4 px-3">
         <div class="container-fluid">
             <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <img src="assets/cpeimg.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                <span class="fw-bold">Computer Engineering</span>
+                <img src="assets/cpeimg.jpg" alt="Logo" width="32" height="32" class="d-inline-block align-text-top me-2 rounded">
+                <span class="fw-bold text-dark">Computer Engineering</span>
             </a>
 
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -204,14 +270,14 @@
     </nav>
 
     <!-- SINGLE HERO BANNER -->
-    <div class="subpage-banner mb-5 rounded-3 overflow-hidden shadow">
+    <div class="subpage-banner mb-5 rounded-3 overflow-hidden shadow-lg">
         <img src="assets/faculty.png" alt="Computer Engineering Faculty Banner">
     </div>
 
     <!-- PAGE HEADER -->
     <div class="text-center mb-5">
-        <h1 class="fw-bold display-5">Meet Our Faculty</h1>
-        <p class="text-secondary lead fs-4 col-md-8 mx-auto">
+        <h1 class="fw-bold display-5 hero-gradient-text">Meet Our Faculty</h1>
+        <p class="text-secondary lead fs-4 col-md-8 mx-auto fw-normal">
             Dedicated educators and industry experts shaping the next generation of computer engineers.
         </p>
     </div>
@@ -223,11 +289,12 @@
         <div class="col-md-6 col-lg-4">
             <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModalEJ">
                 <div>
+                    <span class="card-badge badge-blue">Department Leadership</span>
                     <div class="faculty-avatar-container">
                         <img src="assets/ej-melendez.jpg" alt="Errol John Antonio Melendez">
                     </div>
-                    <h3 class="fw-bold fs-4 mb-1">Errol John Melendez</h3>
-                    <p class="text-primary fw-semibold small mb-2">Department Head, CpE</p>
+                    <h3 class="fw-bold fs-4 mb-1 text-dark">Errol John Melendez</h3>
+                    <p class="text-primary fw-bold small mb-2">Department Head, CpE</p>
                     <p class="text-muted small">BSCpE | UN SDGs & Project Innovation</p>
                 </div>
                 <div class="mt-3">
@@ -240,11 +307,12 @@
         <div class="col-md-6 col-lg-4">
             <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModalLim">
                 <div>
+                    <span class="card-badge badge-red">Senior Faculty</span>
                     <div class="faculty-avatar-container">
                         <img src="assets/mary-ann-lim.png" alt="Mary Ann Limkian">
                     </div>
-                    <h3 class="fw-bold fs-4 mb-1">Mary Ann Limkian</h3>
-                    <p class="text-primary fw-semibold small mb-2">Faculty Professor</p>
+                    <h3 class="fw-bold fs-4 mb-1 text-dark">Mary Ann Limkian</h3>
+                    <p class="text-primary fw-bold small mb-2">Faculty Professor</p>
                     <p class="text-muted small">BSCpE | Computer Networks & Architecture</p>
                 </div>
                 <div class="mt-3">
@@ -257,11 +325,12 @@
         <div class="col-md-6 col-lg-4">
             <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModalJoe">
                 <div>
+                    <span class="card-badge badge-purple">Software & Microprocessors</span>
                     <div class="faculty-avatar-container">
                         <img src="assets/joemhel-coral.png" alt="Joemhel John Coral">
                     </div>
-                    <h3 class="fw-bold fs-4 mb-1">Joemhel John Coral</h3>
-                    <p class="text-primary fw-semibold small mb-2">Faculty Professor</p>
+                    <h3 class="fw-bold fs-4 mb-1 text-dark">Joemhel John Coral</h3>
+                    <p class="text-primary fw-bold small mb-2">Faculty Professor</p>
                     <p class="text-muted small">BSCpE | OOP, Microprocessors & Software</p>
                 </div>
                 <div class="mt-3">
@@ -282,10 +351,23 @@
                     <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 text-center">
-                    <img src="assets/faculty-sir-ej.png" class="modal-faculty-img shadow-sm mb-3" alt="Errol John Antonio Melendez">
+                    <div class="mb-3">
+                        <img src="assets/faculty-sir-ej2.png" class="modal-faculty-img shadow-sm" alt="Errol John Antonio Melendez">
+                    </div>
+
                     <div class="email-banner-box my-2">
-                        <span class="label-text">Contact Email:</span>
-                        <a href="mailto:melendez.erroljohn@ue.edu.ph" class="email-link">melendez.erroljohn@ue.edu.ph</a>
+                        <span class="label-text"><i class="bi bi-person-lines-fill me-1"></i> Connect with Sir EJ:</span>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a href="https://www.facebook.com/iamerrolantonio" target="_blank" class="social-icon-btn icon-fb" title="Facebook Profile">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="social-icon-btn icon-ig" title="Instagram Profile">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="mailto:erroljohn.antonio@ue.edu.ph" class="social-icon-btn icon-email" title="Send Email">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -300,10 +382,23 @@
                     <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 text-center">
-                    <img src="assets/faculty-maam-lim.png" class="modal-faculty-img shadow-sm mb-3" alt="Mary Ann Limkian">
+                    <div class="mb-3">
+                        <img src="assets/faculty-maam-lim2.png" class="modal-faculty-img shadow-sm" alt="Mary Ann Limkian">
+                    </div>
+
                     <div class="email-banner-box my-2">
-                        <span class="label-text">Contact Email:</span>
-                        <a href="mailto:limkian.maryann@ue.edu.ph" class="email-link">limkian.maryann@ue.edu.ph</a>
+                        <span class="label-text"><i class="bi bi-person-lines-fill me-1"></i> Connect with Ma'am Lim:</span>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a href="https://www.facebook.com/maryann.laxamanalimkian" target="_blank" class="social-icon-btn icon-fb" title="Facebook Profile">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="social-icon-btn icon-ig" title="Instagram Profile">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="mailto:maryann.limkian@ue.edu.ph" class="social-icon-btn icon-email" title="Send Email">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -318,10 +413,23 @@
                     <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 text-center">
-                    <img src="assets/faculty-sir-joe.png" class="modal-faculty-img shadow-sm mb-3" alt="Joemhel John Coral">
+                    <div class="mb-3">
+                        <img src="assets/faculty-sir-joe2.png" class="modal-faculty-img shadow-sm" alt="Joemhel John Coral">
+                    </div>
+
                     <div class="email-banner-box my-2">
-                        <span class="label-text">Contact Email:</span>
-                        <a href="mailto:coral_joemheljohn@ue.edu.ph" class="email-link">coral_joemheljohn@ue.edu.ph</a>
+                        <span class="label-text"><i class="bi bi-person-lines-fill me-1"></i> Connect with Sir Joe:</span>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a href="https://www.facebook.com/joemheljhon.coral" target="_blank" class="social-icon-btn icon-fb" title="Facebook Profile">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="social-icon-btn icon-ig" title="Instagram Profile">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="mailto:coral.jeomheljohn@ue.edu.ph" class="social-icon-btn icon-email" title="Send Email">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -331,7 +439,7 @@
     <!-- FOOTER -->
     <footer class="bg-white rounded-3 shadow-sm py-4 mt-5 border-top">
         <div class="container text-center">
-            <p class="fw-bold mb-1">BS Computer Engineering — University of the East</p>
+            <p class="fw-bold mb-1 text-dark">BS Computer Engineering — University of the East</p>
             <p class="text-muted small mb-2">College of Engineering | Department of Computer Engineering</p>
             <div class="d-flex justify-content-center gap-3 small mb-2">
                 <a href="index.html" class="text-decoration-none text-secondary">Home</a>
@@ -342,6 +450,7 @@
             <p class="text-muted extra-small mb-0" style="font-size: 0.8rem;">&copy; UE Computer Engineering. All rights reserved.</p>
         </div>
     </footer>
+
 </div>
 
 </body>

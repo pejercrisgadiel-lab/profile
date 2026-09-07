@@ -72,3 +72,32 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
         height: 260px;
     }
 }
+
+/* RESPONSIVE CAROUSEL - NO CROPPING */
+.carousel-item {
+    width: 100%;
+    aspect-ratio: 2 / 1; /* Fits standard wide banner aspect ratios */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Displays 100% of the graphic */
+    background-color: #ffffff; /* Fills empty background space cleanly */
+}
+.carousel-item {
+    height: 480px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* Prioritizes fitting top text and upper content */
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 260px;
+    }
+}

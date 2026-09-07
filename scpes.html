@@ -5,61 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Computer Engineering | SCPES Organization</title>
 
-<!-- Google Fonts & Icons -->
+<!-- GOOGLE FONTS (Space Grotesk + Plus Jakarta Sans) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-<!-- Bootstrap CSS & JS -->
+<!-- BOOTSTRAP 5 & BOOTSTRAP ICONS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
-    /* BACKGROUND GRADIENT (MATCHES INDEX) */
+    /* 1. VIBRANT MULTI-COLOR MESH BACKGROUND */
     body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f8f9fa;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f0f4f9;
         background-image: 
-            radial-gradient(at 0% 0%, rgba(220, 53, 69, 0.06) 0px, transparent 50%),
-            radial-gradient(at 100% 0%, rgba(0, 113, 227, 0.06) 0px, transparent 50%);
+            radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 45%),
+            radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.12) 0px, transparent 45%),
+            radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
         background-attachment: fixed;
         min-height: 100vh;
     }
 
-    /* Executive Board Cards (Apple Style) */
+    /* 2. HEADINGS & GRADIENT ACCENTS */
+    h1, h2, h3, h4, h5, h6, .navbar-brand {
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: -0.02em;
+    }
+
+    .hero-gradient-text {
+        background: linear-gradient(135deg, #0f172a 20%, #1e40af 60%, #e11d48 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* NAVBAR CUSTOM HIGHLIGHTS */
+    .navbar {
+        border: 1px solid rgba(37, 99, 235, 0.12);
+    }
+
+    .nav-link.active, .dropdown-item.active {
+        color: #2563eb !important;
+        font-weight: 700;
+    }
+
+    .dropdown-item.active {
+        background-color: #eff6ff !important;
+    }
+
+    /* 3. EXECUTIVE BOARD CARDS */
     .exec-card {
         background-color: #ffffff;
-        border-radius: 18px;
+        border-radius: 20px;
         overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         height: 100%;
+        position: relative;
+    }
+
+    /* Gradient Accent Top Border */
+    .exec-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #2563eb, #6366f1, #e11d48);
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+        z-index: 2;
     }
     
     .exec-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-6px);
+        box-shadow: 0 16px 35px rgba(37, 99, 235, 0.15);
+        border-color: rgba(37, 99, 235, 0.25);
     }
 
     .exec-img {
         width: 100%;
-        height: 210px;
+        height: 220px;
         object-fit: cover;
         display: block;
     }
 
     .role-badge {
-        color: #0071e3;
-        font-size: 0.75rem;
-        letter-spacing: 0.5px;
+        display: inline-block;
+        background-color: #eff6ff;
+        color: #1d4ed8;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
         font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 50px;
+        text-transform: uppercase;
     }
 
-    /* Accordion Custom Styling */
+    /* 4. VIDEO HERO CARD BOX */
+    .video-hero-card {
+        background: #ffffff;
+        border-radius: 20px;
+        border: 1px solid rgba(37, 99, 235, 0.12);
+        box-shadow: 0 12px 32px rgba(37, 99, 235, 0.08);
+    }
+
+    .video-hero-card video {
+        width: 100%;
+        border-radius: 12px;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* 5. ACCORDION STYLING */
+    .accordion-item {
+        background-color: #ffffff;
+        border-color: rgba(37, 99, 235, 0.08) !important;
+    }
+
+    .accordion-button {
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
     .accordion-button:not(.collapsed) {
-        color: #0071e3;
-        background-color: #f4f8ff;
+        color: #1d4ed8;
+        background-color: #eff6ff;
+        box-shadow: none;
     }
     
     .accordion-button:focus {
@@ -70,12 +143,12 @@
 <body>
 
 <div class="container-fluid px-4 my-4">
-    <!-- NAVBAR (MATCHES INDEX NAVBAR) -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-3 shadow-sm mb-4 px-3">
         <div class="container-fluid">
             <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <img src="assets/cpeimg.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                <span class="fw-bold">Computer Engineering</span>
+                <img src="assets/cpeimg.jpg" alt="Logo" width="32" height="32" class="d-inline-block align-text-top me-2 rounded">
+                <span class="fw-bold text-dark">Computer Engineering</span>
             </a>
 
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -83,7 +156,7 @@
             </button>
             
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto">
+                <div class="navbar-nav ms-auto fw-medium">
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="what-is-cpe.html" class="nav-item nav-link">What is CpE?</a>
                     <a href="cpe-at-ue.html" class="nav-item nav-link">CPE at UE</a>
@@ -109,7 +182,7 @@
     </nav>
 
     <!-- CAROUSEL SECTION -->
-    <div id="myCarousel" class="carousel slide mb-5 rounded-3 overflow-hidden shadow" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide mb-5 rounded-3 overflow-hidden shadow-lg border border-primary border-opacity-10" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
@@ -118,13 +191,13 @@
         
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/slide5.jpg" class="d-block w-100 object-fit-cover" alt="SCES Event 1">
+                <img src="assets/slide5.jpg" class="d-block w-100 object-fit-cover" alt="SCPES Event 1">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide4.jpg" class="d-block w-100 object-fit-cover" alt="SCES Event 2">
+                <img src="assets/slide4.jpg" class="d-block w-100 object-fit-cover" alt="SCPES Event 2">
             </div>
             <div class="carousel-item">
-                <img src="assets/slide3.jpg" class="d-block w-100 object-fit-cover" alt="SCES Event 3">
+                <img src="assets/slide3.jpg" class="d-block w-100 object-fit-cover" alt="SCPES Event 3">
             </div>
         </div>
 
@@ -138,15 +211,40 @@
         </button>
     </div>
 
-    <!-- HERO / TITLE -->
-    <div class="text-center mb-5">
-        <h1 class="fw-bold display-5">Meet the Executives</h1>
-        <p class="text-secondary lead fs-5 col-md-8 mx-auto">
-            The student leaders driving innovation and community within UE Manila Computer Engineering.
-        </p>
+    <!-- SECTION 1: STANDALONE HEADER & VIDEO -->
+    <div class="row align-items-center mb-5 g-4 px-2">
+        <!-- Title Left -->
+        <div class="col-lg-7 text-center text-lg-start">
+            <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 mb-2 px-3 py-2 fw-semibold">
+                <i class="bi bi-people-fill me-1"></i> SCPES Leadership
+            </span>
+            <h1 class="fw-bold display-5 mb-3 hero-gradient-text">Meet the Executives</h1>
+            <p class="text-secondary lead fs-5 mb-0 fw-normal">
+                The student leaders driving innovation, excellence, and community within UE Manila Computer Engineering.
+            </p>
+        </div>
+
+        <!-- Video Card Right -->
+        <div class="col-lg-5">
+            <div class="video-hero-card p-3">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-play-circle-fill text-primary fs-5 me-2"></i>
+                    <h6 class="fw-bold mb-0 text-dark">SCPES Highlights</h6>
+                </div>
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                    <video controls autoplay loop muted playsinline>
+                        <source src="scpesvid.mp4" type="video/mp4">
+                        <source src="assets/scpesvid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- EXECUTIVES GRID SECTION -->
+    <hr class="my-5 opacity-10">
+
+    <!-- SECTION 2: FULL-WIDTH EXECUTIVE CARDS GRID -->
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center mb-5">
         
         <!-- CARD 1 -->
@@ -154,7 +252,7 @@
             <div class="exec-card">
                 <img src="assets/pres.jpg" class="exec-img" alt="President">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">PRESIDENT</span>
+                    <span class="role-badge mb-2">PRESIDENT</span>
                     <h6 class="fw-bold text-dark mb-0">Charlize Baldovino</h6>
                 </div>
             </div>
@@ -165,7 +263,7 @@
             <div class="exec-card">
                 <img src="assets/IA.jpg" class="exec-img" alt="Internal Affairs">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">INTERNAL AFFAIRS</span>
+                    <span class="role-badge mb-2">INTERNAL AFFAIRS</span>
                     <h6 class="fw-bold text-dark mb-0">Jawad Macawadib</h6>
                 </div>
             </div>
@@ -176,7 +274,7 @@
             <div class="exec-card">
                 <img src="assets/EA.jpg" class="exec-img" alt="External Affairs">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">EXTERNAL AFFAIRS</span>
+                    <span class="role-badge mb-2">EXTERNAL AFFAIRS</span>
                     <h6 class="fw-bold text-dark mb-0">Joshua Madriaga</h6>
                 </div>
             </div>
@@ -187,7 +285,7 @@
             <div class="exec-card">
                 <img src="assets/S.jpg" class="exec-img" alt="Secretariat">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">SECRETARIAT</span>
+                    <span class="role-badge mb-2">SECRETARIAT</span>
                     <h6 class="fw-bold text-dark mb-0">Ghenny Manabat</h6>
                 </div>
             </div>
@@ -198,7 +296,7 @@
             <div class="exec-card">
                 <img src="assets/BF.jpg" class="exec-img" alt="Business and Finance">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">BUSINESS & FINANCE</span>
+                    <span class="role-badge mb-2">BUSINESS & FINANCE</span>
                     <h6 class="fw-bold text-dark mb-0">Jessica Apostol</h6>
                 </div>
             </div>
@@ -209,7 +307,7 @@
             <div class="exec-card">
                 <img src="assets/EP.jpg" class="exec-img" alt="Events and Programs">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">EVENTS & PROG.</span>
+                    <span class="role-badge mb-2">EVENTS & PROG.</span>
                     <h6 class="fw-bold text-dark mb-0">Roselle Landayan</h6>
                 </div>
             </div>
@@ -220,7 +318,7 @@
             <div class="exec-card">
                 <img src="assets/CD.jpg" class="exec-img" alt="Career Development">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">CAREER DEV.</span>
+                    <span class="role-badge mb-2">CAREER DEV.</span>
                     <h6 class="fw-bold text-dark mb-0">Joshua Purificacion</h6>
                 </div>
             </div>
@@ -231,7 +329,7 @@
             <div class="exec-card">
                 <img src="assets/SR.jpg" class="exec-img" alt="Social Responsibility">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">SOCIAL RESP.</span>
+                    <span class="role-badge mb-2">SOCIAL RESP.</span>
                     <h6 class="fw-bold text-dark mb-0">Earl Lorenzo</h6>
                 </div>
             </div>
@@ -242,7 +340,7 @@
             <div class="exec-card">
                 <img src="assets/TO.jpg" class="exec-img" alt="Technical Operations">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">TECH OPS.</span>
+                    <span class="role-badge mb-2">TECH OPS.</span>
                     <h6 class="fw-bold text-dark mb-0">Mei Rupera</h6>
                 </div>
             </div>
@@ -253,7 +351,7 @@
             <div class="exec-card">
                 <img src="assets/CC.jpg" class="exec-img" alt="Creatives & Comm.">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">CREATIVES & COMM.</span>
+                    <span class="role-badge mb-2">CREATIVES & COMM.</span>
                     <h6 class="fw-bold text-dark mb-0">Jian Cruz</h6>
                 </div>
             </div>
@@ -264,7 +362,7 @@
             <div class="exec-card">
                 <img src="assets/M.jpg" class="exec-img" alt="Media">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">MEDIA</span>
+                    <span class="role-badge mb-2">MEDIA</span>
                     <h6 class="fw-bold text-dark mb-0">Joe Cornita</h6>
                 </div>
             </div>
@@ -275,7 +373,7 @@
             <div class="exec-card">
                 <img src="assets/LV.jpg" class="exec-img" alt="Logistics & Vol.">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">LOGISTICS & VOL.</span>
+                    <span class="role-badge mb-2">LOGISTICS & VOL.</span>
                     <h6 class="fw-bold text-dark mb-0">Bench Paed</h6>
                 </div>
             </div>
@@ -286,7 +384,7 @@
             <div class="exec-card">
                 <img src="assets/RW.jpg" class="exec-img" alt="Recreation & Wellness">
                 <div class="p-3 text-center">
-                    <span class="role-badge d-block mb-1">RECREATION & WELL.</span>
+                    <span class="role-badge mb-2">RECREATION & WELL.</span>
                     <h6 class="fw-bold text-dark mb-0">Felix Adriano</h6>
                 </div>
             </div>
@@ -294,49 +392,46 @@
 
     </div>
 
-    <!-- ABOUT SCES & CpE (ACCORDION SECTION) -->
+    <!-- ABOUT SCPES & CpE (ACCORDION SECTION) -->
     <div class="my-5 py-4">
         <div class="text-center mb-4">
-            <h2 class="fw-bold">About the Organization</h2>
+            <h2 class="fw-bold text-dark">About the Organization</h2>
         </div>
 
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-8">
                 <div class="accordion shadow-sm rounded-3 overflow-hidden border-0" id="cpeAccordion">
                     
-                    <!-- Accordion Item 1 -->
                     <div class="accordion-item border-0 border-bottom">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="bi bi-info-circle me-2 text-primary"></i> What is SCES?
+                                <i class="bi bi-info-circle-fill me-2 text-primary"></i> What is SCPES?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#cpeAccordion">
                             <div class="accordion-body text-secondary">
-                                SCES is the official student organization for Computer Engineering (CpE) students at the University of the East - Manila. We aim to foster academic excellence, technical proficiency, and camaraderie among future engineers by providing platforms for innovation and leadership.
+                                SCPES is the official student organization for Computer Engineering (CpE) students at the University of the East - Manila. We aim to foster academic excellence, technical proficiency, and camaraderie among future engineers by providing platforms for innovation and leadership.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Accordion Item 2 -->
                     <div class="accordion-item border-0 border-bottom">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <i class="bi bi-people me-2 text-primary"></i> What is the role of the Executive Board?
+                                <i class="bi bi-people-fill me-2 text-primary"></i> What is the role of the Executive Board?
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#cpeAccordion">
                             <div class="accordion-body text-secondary">
-                                The Executive Board leads the SCES community by organizing technical seminars, managing internal and external affairs, facilitating career development, and handling logistics for college-wide events. Each officer specializes in a crucial area to ensure CpE students have a supportive and enriching college experience.
+                                The Executive Board leads the SCPES community by organizing technical seminars, managing internal and external affairs, facilitating career development, and handling logistics for college-wide events. Each officer specializes in a crucial area to ensure CpE students have a supportive and enriching college experience.
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Accordion Item 3 -->
                     <div class="accordion-item border-0">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <i class="bi bi-laptop me-2 text-primary"></i> What do Computer Engineering students do?
+                                <i class="bi bi-laptop-fill me-2 text-primary"></i> What do Computer Engineering students do?
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#cpeAccordion">
@@ -351,10 +446,10 @@
         </div>
     </div>
 
-    <!-- FOOTER (MATCHES INDEX FOOTER) -->
+    <!-- FOOTER -->
     <footer class="bg-white rounded-3 shadow-sm py-4 mt-5 border-top">
         <div class="container text-center">
-            <p class="fw-bold mb-1">BS Computer Engineering — University of the East</p>
+            <p class="fw-bold mb-1 text-dark">BS Computer Engineering — University of the East</p>
             <p class="text-muted small mb-2">College of Engineering | Department of Computer Engineering</p>
             <div class="d-flex justify-content-center gap-3 small mb-2">
                 <a href="index.html" class="text-decoration-none text-secondary">Home</a>
