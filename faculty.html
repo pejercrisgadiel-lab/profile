@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Faculty | BS Computer Engineering</title>
 
-<!-- GOOGLE FONTS (Space Grotesk + Plus Jakarta Sans) -->
+<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
@@ -16,48 +16,95 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
-    /* 1. VIBRANT MULTI-COLOR MESH BACKGROUND */
+    /* 1. DEEP UE CRIMSON AMBIENT BACKGROUND */
     body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #f0f4f9;
+        background-color: #0c0202;
         background-image: 
-            radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 45%),
-            radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.12) 0px, transparent 45%),
-            radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
+            radial-gradient(at 0% 0%, rgba(153, 0, 0, 0.35) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(220, 38, 38, 0.25) 0px, transparent 50%),
+            radial-gradient(at 50% 100%, rgba(112, 2, 2, 0.3) 0px, transparent 50%),
+            repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 10px, transparent 10px, transparent 20px);
         background-attachment: fixed;
+        color: #f1f5f9;
         min-height: 100vh;
     }
 
     /* 2. HEADINGS & GRADIENT ACCENTS */
-    h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
+    h1, h2, h3, h4, h5, h6, .navbar-brand {
         font-family: 'Space Grotesk', sans-serif;
         letter-spacing: -0.02em;
     }
 
     .hero-gradient-text {
-        background: linear-gradient(135deg, #0f172a 20%, #1e40af 60%, #e11d48 100%);
+        background: linear-gradient(135deg, #ffffff 30%, #fca5a5 70%, #ef4444 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    /* NAVBAR CUSTOM HIGHLIGHTS */
-    .navbar {
-        border: 1px solid rgba(37, 99, 235, 0.12);
+    /* 3. NAVBAR & LOGO */
+    .custom-navbar {
+        background-color: #171b22 !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 10px !important;
+        padding: 10px 16px !important;
     }
 
-    .nav-link.active {
-        color: #2563eb !important;
+    .custom-navbar .navbar-brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #ffffff !important;
+        letter-spacing: -0.01em;
+    }
+
+    .custom-navbar .logo-box {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        overflow: hidden;
+        background-color: #0c0d10;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .custom-navbar .logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.22);
+    }
+
+    .custom-navbar .navbar-toggler {
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 8px;
+        padding: 6px 10px;
+    }
+
+    .custom-navbar .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+    .nav-link.active, .dropdown-item.active {
+        color: #ef4444 !important;
         font-weight: 700;
     }
 
-    /* 3. SUBPAGE HERO BANNER */
+    .dropdown-item.active {
+        background-color: rgba(239, 68, 68, 0.15) !important;
+    }
+
+    /* 4. SUBPAGE HERO BANNER */
     .subpage-banner {
         height: 380px;
-        background-color: #0f1115;
+        background-color: #120505;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid rgba(37, 99, 235, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+        position: relative;
     }
 
     .subpage-banner img {
@@ -73,12 +120,12 @@
         }
     }
 
-    /* 4. FACULTY CARDS */
+    /* 5. FACULTY CARDS */
     .faculty-card {
-        background-color: #ffffff;
+        background: rgba(26, 8, 8, 0.85);
         border-radius: 24px;
         overflow: hidden;
-        border: 1px solid rgba(37, 99, 235, 0.08);
+        border: 1px solid rgba(220, 38, 38, 0.25);
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         padding: 26px 22px;
         text-align: center;
@@ -98,15 +145,15 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #2563eb, #6366f1, #e11d48);
+        background: linear-gradient(90deg, #ef4444, #b91c1c, #f87171);
         opacity: 0.8;
         transition: opacity 0.3s ease;
     }
     
     .faculty-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 16px 35px rgba(37, 99, 235, 0.15);
-        border-color: rgba(37, 99, 235, 0.25);
+        box-shadow: 0 16px 35px rgba(220, 38, 38, 0.25);
+        border-color: rgba(239, 68, 68, 0.5);
     }
 
     .faculty-avatar-container {
@@ -115,8 +162,8 @@
         margin: 0 auto 16px auto;
         border-radius: 50%;
         overflow: hidden;
-        border: 3px solid #2563eb;
-        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+        border: 3px solid #ef4444;
+        box-shadow: 0 6px 18px rgba(239, 68, 68, 0.3);
     }
 
     .faculty-avatar-container img {
@@ -137,33 +184,33 @@
         margin-bottom: 12px;
     }
 
-    .badge-blue { background-color: #eff6ff; color: #1d4ed8; }
-    .badge-red { background-color: #fff1f2; color: #e11d48; }
-    .badge-purple { background-color: #f5f3ff; color: #6d28d9; }
+    .badge-blue { background-color: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); }
+    .badge-red { background-color: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }
+    .badge-purple { background-color: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
 
-    /* 5. VIBRANT GRADIENT BUTTON */
-    .btn-apple {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    /* 6. VIBRANT CRIMSON GRADIENT BUTTON */
+    .btn-crimson {
+        background: linear-gradient(135deg, #dc2626 0%, #990000 100%);
         color: #ffffff;
         border-radius: 980px;
         padding: 8px 24px;
         font-weight: 600;
         font-size: 0.95rem;
-        border: none;
+        border: 1px solid rgba(248, 113, 113, 0.3);
         text-decoration: none;
         display: inline-block;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
         transition: all 0.2s ease;
     }
 
-    .btn-apple:hover {
-        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    .btn-crimson:hover {
+        background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
         color: #ffffff;
-        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
         transform: scale(1.02);
     }
 
-    /* 6. MODAL STYLING */
+    /* 7. MODAL STYLING */
     .modal-dialog.modal-extra-wide {
         max-width: 1050px !important;
         width: 95vw !important;
@@ -172,9 +219,10 @@
 
     .modal-extra-wide .modal-content {
         border-radius: 24px !important;
-        border: none !important;
+        border: 1px solid rgba(239, 68, 68, 0.3) !important;
         overflow: hidden !important;
-        background-color: #ffffff !important;
+        background-color: #171b22 !important;
+        color: #ffffff !important;
     }
 
     .modal-faculty-img {
@@ -185,8 +233,8 @@
     }
 
     .email-banner-box {
-        background-color: #e0f2fe;
-        border: 1px solid rgba(37, 99, 235, 0.2);
+        background-color: rgba(220, 38, 38, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.3);
         border-radius: 18px;
         padding: 18px 24px;
         display: flex;
@@ -197,7 +245,7 @@
     }
 
     .email-banner-box .label-text {
-        color: #0f172a;
+        color: #f1f5f9;
         font-weight: 700;
         text-transform: uppercase;
         font-size: 0.95rem;
@@ -213,31 +261,33 @@
         justify-content: center;
         font-size: 1.6rem;
         color: #ffffff !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         text-decoration: none;
     }
 
     .social-icon-btn:hover {
         transform: translateY(-3px) scale(1.08);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        box-shadow: 0 8px 20px rgba(220,38,38,0.4);
     }
 
     .icon-fb { background-color: #1877f2; }
     .icon-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-    .icon-email { background-color: #ea4335; }
+    .icon-email { background-color: #dc2626; }
 </style>
 </head>
 <body>
 
 <div class="container-fluid px-4 my-4">
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-3 shadow-sm mb-4 px-3">
-        <div class="container-fluid">
-            <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <img src="assets/cpeimg.jpg" alt="Logo" width="32" height="32" class="d-inline-block align-text-top me-2 rounded">
-                <span class="fw-bold text-dark">Computer Engineering</span>
+    <!-- MASTER NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm mb-4">
+        <div class="container-fluid px-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+                <div class="logo-box me-1">
+                    <img src="assets/cpeimg.jpg" alt="CpE Logo" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%23111317\'/><path d=\'M35 35 L50 50 L35 65 M50 35 L65 50 L50 65\' stroke=\'%23ffffff\' stroke-width=\'8\' stroke-linecap=\'round\' stroke-linejoin=\'round\' fill=\'none\'/></svg>';">
+                </div>
+                <span class="text-white">Computer Engineering</span>
             </a>
 
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -257,7 +307,7 @@
                         <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-3" aria-labelledby="moreDropdown">
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end border-0 shadow-lg rounded-3" aria-labelledby="moreDropdown">
                             <li><a href="scpes.html" class="dropdown-item">SCPES Organization</a></li>
                             <li><a href="projects.html" class="dropdown-item">Student Projects</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -276,8 +326,11 @@
 
     <!-- PAGE HEADER -->
     <div class="text-center mb-5">
+        <span class="badge rounded-pill mb-3 px-3 py-2 fw-semibold" style="color: #f87171; background-color: rgba(220, 38, 38, 0.15); border: 1px solid rgba(248, 113, 113, 0.3);">
+            <i class="bi bi-people-fill me-1"></i> Department Educators
+        </span>
         <h1 class="fw-bold display-5 hero-gradient-text">Meet Our Faculty</h1>
-        <p class="text-secondary lead fs-4 col-md-8 mx-auto fw-normal">
+        <p class="text-light opacity-75 lead fs-4 col-md-8 mx-auto fw-normal">
             Dedicated educators and industry experts shaping the next generation of computer engineers.
         </p>
     </div>
@@ -293,12 +346,12 @@
                     <div class="faculty-avatar-container">
                         <img src="assets/ej-melendez.jpg" alt="Errol John Antonio Melendez">
                     </div>
-                    <h3 class="fw-bold fs-4 mb-1 text-dark">Errol John Melendez</h3>
-                    <p class="text-primary fw-bold small mb-2">Department Head, CpE</p>
-                    <p class="text-muted small">BSCpE | UN SDGs & Project Innovation</p>
+                    <h3 class="fw-bold fs-4 mb-1 text-white">Errol John Melendez</h3>
+                    <p class="fw-bold small mb-2" style="color: #f87171;">Department Head, CpE</p>
+                    <p class="text-light opacity-75 small">BSCpE | UN SDGs & Project Innovation</p>
                 </div>
                 <div class="mt-3">
-                    <button class="btn-apple btn-sm w-100">View Profile</button>
+                    <button class="btn-crimson btn-sm w-100">View Profile</button>
                 </div>
             </div>
         </div>
@@ -311,12 +364,12 @@
                     <div class="faculty-avatar-container">
                         <img src="assets/mary-ann-lim.png" alt="Mary Ann Limkian">
                     </div>
-                    <h3 class="fw-bold fs-4 mb-1 text-dark">Mary Ann Limkian</h3>
-                    <p class="text-primary fw-bold small mb-2">Faculty Professor</p>
-                    <p class="text-muted small">BSCpE | Computer Networks & Architecture</p>
+                    <h3 class="fw-bold fs-4 mb-1 text-white">Mary Ann Limkian</h3>
+                    <p class="fw-bold small mb-2" style="color: #f87171;">Faculty Professor</p>
+                    <p class="text-light opacity-75 small">BSCpE | Computer Networks & Architecture</p>
                 </div>
                 <div class="mt-3">
-                    <button class="btn-apple btn-sm w-100">View Profile</button>
+                    <button class="btn-crimson btn-sm w-100">View Profile</button>
                 </div>
             </div>
         </div>
@@ -329,12 +382,12 @@
                     <div class="faculty-avatar-container">
                         <img src="assets/joemhel-coral.png" alt="Joemhel John Coral">
                     </div>
-                    <h3 class="fw-bold fs-4 mb-1 text-dark">Joemhel John Coral</h3>
-                    <p class="text-primary fw-bold small mb-2">Faculty Professor</p>
-                    <p class="text-muted small">BSCpE | OOP, Microprocessors & Software</p>
+                    <h3 class="fw-bold fs-4 mb-1 text-white">Joemhel John Coral</h3>
+                    <p class="fw-bold small mb-2" style="color: #f87171;">Faculty Professor</p>
+                    <p class="text-light opacity-75 small">BSCpE | OOP, Microprocessors & Software</p>
                 </div>
                 <div class="mt-3">
-                    <button class="btn-apple btn-sm w-100">View Profile</button>
+                    <button class="btn-crimson btn-sm w-100">View Profile</button>
                 </div>
             </div>
         </div>
@@ -348,7 +401,7 @@
         <div class="modal-dialog modal-dialog-centered modal-extra-wide">
             <div class="modal-content shadow-lg p-3">
                 <div class="modal-header border-0 pb-1">
-                    <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 text-center">
                     <div class="mb-3">
@@ -379,7 +432,7 @@
         <div class="modal-dialog modal-dialog-centered modal-extra-wide">
             <div class="modal-content shadow-lg p-3">
                 <div class="modal-header border-0 pb-1">
-                    <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 text-center">
                     <div class="mb-3">
@@ -410,7 +463,7 @@
         <div class="modal-dialog modal-dialog-centered modal-extra-wide">
             <div class="modal-content shadow-lg p-3">
                 <div class="modal-header border-0 pb-1">
-                    <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 text-center">
                     <div class="mb-3">
@@ -437,10 +490,10 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-white rounded-3 shadow-sm py-4 mt-5 border-top">
+    <footer class="bg-dark text-white rounded-3 py-4 mt-5 border border-secondary border-opacity-25">
         <div class="container text-center">
-            <p class="fw-bold mb-1 text-dark">BS Computer Engineering — University of the East</p>
-            <p class="text-muted small mb-2">College of Engineering | Department of Computer Engineering</p>
+            <p class="fw-bold mb-1">BS Computer Engineering — University of the East Manila</p>
+            <p class="text-secondary small mb-2">College of Engineering | Department of Computer Engineering</p>
             <div class="d-flex justify-content-center gap-3 small mb-2">
                 <a href="index.html" class="text-decoration-none text-secondary">Home</a>
                 <a href="what-is-cpe.html" class="text-decoration-none text-secondary">About</a>

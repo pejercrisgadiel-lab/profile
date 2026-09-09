@@ -1,98 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What is CpE? | Computer Engineering</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What is CpE? | Computer Engineering</title>
 
-<!-- GOOGLE FONTS (Space Grotesk + Plus Jakarta Sans) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BOOTSTRAP 5 & BOOTSTRAP ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<style>
-    /* GLOBAL FONTS */
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #f8f9fa;
-        background-image: 
-            radial-gradient(at 0% 0%, rgba(220, 53, 69, 0.06) 0px, transparent 50%),
-            radial-gradient(at 100% 0%, rgba(0, 113, 227, 0.06) 0px, transparent 50%);
-        background-attachment: fixed;
-        min-height: 100vh;
-    }
-
-    /* HEADINGS & ACCENT TEXT */
-    h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
-        font-family: 'Space Grotesk', sans-serif;
-        letter-spacing: -0.02em;
-    }
-
-    /* SINGLE SUBPAGE HERO BANNER */
-    .subpage-banner {
-        height: 380px;
-        background-color: #0f1115;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .subpage-banner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Change to 'contain' if your graphic includes text edge-to-edge */
-        object-position: center;
-    }
-
-    @media (max-width: 768px) {
-        .subpage-banner {
-            height: 220px;
+    <style>
+        /* 1. DEEP UE CRIMSON AMBIENT BACKGROUND */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0c0202;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(153, 0, 0, 0.35) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(220, 38, 38, 0.25) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(112, 2, 2, 0.3) 0px, transparent 50%),
+                repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 10px, transparent 10px, transparent 20px);
+            background-attachment: fixed;
+            color: #f1f5f9;
+            min-height: 100vh;
         }
-    }
 
-    /* Apple-Style Card Styling */
-    .apple-card {
-        background-color: #fbfbfd;
-        border-radius: 22px;
-        overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        padding: 30px 24px;
-        height: 100%;
-    }
+        /* 2. HEADINGS & GRADIENT ACCENTS */
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
 
-    /* Apple-style Pill Button */
-    .btn-apple {
-        background-color: #0071e3;
-        color: #ffffff;
-        border-radius: 980px;
-        padding: 8px 24px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        border: none;
-        text-decoration: none;
-        display: inline-block;
-        transition: background-color 0.2s ease;
-    }
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #ffffff 30%, #fca5a5 70%, #ef4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .btn-apple:hover {
-        background-color: #0077ed;
-        color: #ffffff;
-    }
-</style>
+        /* 3. NAVBAR & LOGO */
+        .custom-navbar {
+            background-color: #171b22 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 10px !important;
+            padding: 10px 16px !important;
+        }
+
+        .custom-navbar .navbar-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff !important;
+            letter-spacing: -0.01em;
+        }
+
+        .custom-navbar .logo-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            overflow: hidden;
+            background-color: #0c0d10;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .custom-navbar .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.22);
+        }
+
+        .custom-navbar .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .custom-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+        .nav-link.active, .dropdown-item.active {
+            color: #ef4444 !important;
+            font-weight: 700;
+        }
+
+        .dropdown-item.active {
+            background-color: rgba(239, 68, 68, 0.15) !important;
+        }
+
+        /* 4. BANNER STYLING */
+        .subpage-banner {
+            height: 380px;
+            background-color: #120505;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .subpage-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .subpage-banner {
+                height: 220px;
+            }
+        }
+
+        /* 5. DARK CRIMSON CARDS */
+        .crimson-card {
+            background: rgba(26, 8, 8, 0.85);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(220, 38, 38, 0.25);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 32px 28px;
+            height: 100%;
+            position: relative;
+        }
+
+        .crimson-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ef4444, #b91c1c, #f87171);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .crimson-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px rgba(220, 38, 38, 0.22);
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+
+        /* 6. BUTTON & ACCENT STYLES */
+        .btn-crimson {
+            background: linear-gradient(135deg, #dc2626 0%, #990000 100%);
+            color: #ffffff;
+            border-radius: 980px;
+            padding: 10px 28px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-crimson:hover {
+            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .bullet-icon {
+            color: #ef4444;
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container-fluid px-4 my-4">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-3 shadow-sm mb-4 px-3">
-        <div class="container-fluid">
-            <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <img src="assets/cpeimg.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                <span class="fw-bold">Computer Engineering</span>
+
+    <!-- MASTER NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm mb-4">
+        <div class="container-fluid px-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+                <div class="logo-box me-1">
+                    <img src="assets/cpeimg.jpg" alt="CpE Logo" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%23111317\'/><path d=\'M35 35 L50 50 L35 65 M50 35 L65 50 L50 65\' stroke=\'%23ffffff\' stroke-width=\'8\' stroke-linecap=\'round\' stroke-linejoin=\'round\' fill=\'none\'/></svg>';">
+                </div>
+                <span class="text-white">Computer Engineering</span>
             </a>
 
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -112,7 +209,7 @@
                         <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-3" aria-labelledby="moreDropdown">
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end border-0 shadow-lg rounded-3" aria-labelledby="moreDropdown">
                             <li><a href="scpes.html" class="dropdown-item">SCPES Organization</a></li>
                             <li><a href="projects.html" class="dropdown-item">Student Projects</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -124,52 +221,72 @@
         </div>
     </nav>
 
-    <!-- SINGLE PREPARED HERO BANNER -->
-    <div class="subpage-banner mb-5 rounded-3 overflow-hidden shadow">
-        <!-- Replace src with your prepared banner image for this page -->
+    <!-- SINGLE HERO BANNER -->
+    <div class="subpage-banner mb-5 rounded-3 overflow-hidden">
         <img src="assets/cpeabout2.png" alt="What is Computer Engineering Banner">
     </div>
 
     <!-- PAGE HEADER -->
     <div class="text-center mb-5">
-        <h1 class="fw-bold display-5">What is Computer Engineering?</h1>
-        <p class="text-secondary lead fs-4 col-md-8 mx-auto">
-            Discover the intersection where hardware engineering meets modern software intelligence.
+        <span class="badge rounded-pill mb-3 px-3 py-2 fw-semibold" style="color: #f87171; background-color: rgba(220, 38, 38, 0.15); border: 1px solid rgba(248, 113, 113, 0.3);">
+            <i class="bi bi-cpu-fill me-1"></i> Discipline Overview
+        </span>
+        <h1 class="fw-bold display-5 mb-3 hero-gradient-text">What is Computer Engineering?</h1>
+        <p class="text-light opacity-75 lead fs-4 col-md-8 mx-auto fw-normal">
+            Discover the intersection where physical hardware engineering meets modern software intelligence.
         </p>
     </div>
 
     <!-- CONTENT SECTION -->
     <div class="row g-4 justify-content-center mb-5">
         <div class="col-lg-6">
-            <div class="apple-card">
-                <h3 class="fw-bold fs-4 mb-3">Bridging Hardware & Software</h3>
-                <p class="text-secondary">
-                    Computer Engineering (CpE) is a branch of engineering that integrates electrical engineering and computer science to develop computer hardware and software solutions. 
+            <div class="crimson-card">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-diagram-3-fill fs-3 me-3" style="color: #ef4444;"></i>
+                    <h3 class="fw-bold fs-4 text-white mb-0">Bridging Hardware & Software</h3>
+                </div>
+                <p class="text-light opacity-75">
+                    Computer Engineering (CpE) is a dynamic discipline that integrates electrical engineering and computer science to develop cutting-edge computer hardware and integrated software solutions.
                 </p>
-                <p class="text-secondary mb-0">
-                    Engineers in this field design microprocessors, embedded systems, microcontrollers, and computing systems—focusing on making devices smarter, faster, and more efficient.
+                <p class="text-light opacity-75 mb-0">
+                    Engineers in this field design microprocessors, embedded devices, circuit architectures, and computing networks—focusing on making modern technology smarter, faster, and more efficient.
                 </p>
             </div>
         </div>
 
         <div class="col-lg-6">
-            <div class="apple-card">
-                <h3 class="fw-bold fs-4 mb-3">Core Focus Areas</h3>
-                <ul class="text-secondary ps-3 mb-0">
-                    <li class="mb-2"><strong>Embedded Systems & IoT:</strong> Microcontroller programming and smart physical automation.</li>
-                    <li class="mb-2"><strong>Digital System Design:</strong> Circuit architecture, VLSI, and hardware logic design.</li>
-                    <li class="mb-2"><strong>Software & Algorithms:</strong> System-level programming, networks, and data handling.</li>
-                    <li><strong>Robotics & AI:</strong> Autonomous system design and hardware-accelerated computing.</li>
+            <div class="crimson-card">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-layers-fill fs-3 me-3" style="color: #ef4444;"></i>
+                    <h3 class="fw-bold fs-4 text-white mb-0">Core Focus Areas</h3>
+                </div>
+                <ul class="list-unstyled text-light opacity-75 mb-0">
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-cpu bullet-icon fs-5"></i>
+                        <span><strong class="text-white">Embedded Systems & IoT:</strong> Microcontroller programming and real-world physical automation.</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-memory bullet-icon fs-5"></i>
+                        <span><strong class="text-white">Digital System Design:</strong> Integrated circuits, VLSI, and digital logic architecture.</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-code-slash bullet-icon fs-5"></i>
+                        <span><strong class="text-white">Software & Networks:</strong> Low-level systems programming, networking, and data structures.</span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <i class="bi bi-robot bullet-icon fs-5"></i>
+                        <span><strong class="text-white">Robotics & AI:</strong> Autonomous physical systems and hardware-accelerated computing.</span>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-white rounded-3 shadow-sm py-4 mt-5 border-top">
+    <footer class="bg-dark text-white rounded-3 py-4 mt-5 border border-secondary border-opacity-25">
         <div class="container text-center">
-            <p class="fw-bold mb-1">BS Computer Engineering — University of the East</p>
-            <p class="text-muted small mb-2">College of Engineering | Department of Computer Engineering</p>
+            <p class="fw-bold mb-1">BS Computer Engineering — University of the East Manila</p>
+            <p class="text-secondary small mb-2">College of Engineering | Department of Computer Engineering</p>
             <div class="d-flex justify-content-center gap-3 small mb-2">
                 <a href="index.html" class="text-decoration-none text-secondary">Home</a>
                 <a href="what-is-cpe.html" class="text-decoration-none text-secondary">About</a>
@@ -179,7 +296,8 @@
             <p class="text-muted extra-small mb-0" style="font-size: 0.8rem;">&copy; UE Computer Engineering. All rights reserved.</p>
         </div>
     </footer>
+
 </div>
 
 </body>
-</html>>>
+</html>
