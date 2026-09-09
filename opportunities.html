@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Career Opportunities | BS Computer Engineering</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP 5 & BOOTSTRAP ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* 1. DEEP UE CRIMSON AMBIENT BACKGROUND */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0c0202;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(153, 0, 0, 0.35) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(220, 38, 38, 0.25) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(112, 2, 2, 0.3) 0px, transparent 50%),
+                repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 10px, transparent 10px, transparent 20px);
+            background-attachment: fixed;
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+
+        /* 2. HEADINGS & GRADIENT ACCENTS */
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #ffffff 30%, #fca5a5 70%, #ef4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 3. NAVBAR & LOGO */
+        .custom-navbar {
+            background-color: #171b22 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 10px !important;
+            padding: 10px 16px !important;
+        }
+
+        .custom-navbar .navbar-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff !important;
+            letter-spacing: -0.01em;
+        }
+
+        .custom-navbar .logo-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            overflow: hidden;
+            background-color: #0c0d10;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .custom-navbar .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.22);
+        }
+
+        .custom-navbar .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .custom-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+        .nav-link.active {
+            color: #ef4444 !important;
+            font-weight: 700;
+        }
+
+        /* 4. BANNER STYLING */
+        .subpage-banner {
+            height: 380px;
+            background-color: #120505;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .subpage-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .subpage-banner {
+                height: 220px;
+            }
+        }
+
+        /* 5. DARK CRIMSON CARDS */
+        .crimson-card {
+            background: rgba(26, 8, 8, 0.85);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(220, 38, 38, 0.25);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 32px 28px;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .crimson-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ef4444, #b91c1c, #f87171);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .crimson-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px rgba(220, 38, 38, 0.22);
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+
+        /* 6. BUTTON & ACCENT STYLES */
+        .btn-crimson {
+            background: linear-gradient(135deg, #dc2626 0%, #990000 100%);
+            color: #ffffff;
+            border-radius: 980px;
+            padding: 10px 28px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-crimson:hover {
+            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .bullet-icon {
+            color: #ef4444;
+            margin-right: 8px;
+        }
+
+        /* 7. CUSTOM TABLE STYLING */
+        .dark-table {
+            background: rgba(26, 8, 8, 0.85);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(220, 38, 38, 0.25);
+        }
+
+        .dark-table table {
+            color: #f1f5f9;
+            margin-bottom: 0;
+        }
+
+        .dark-table th {
+            background-color: rgba(220, 38, 38, 0.2);
+            color: #f87171;
+            border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 16px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .dark-table td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid px-4 my-4">
+
+    <!-- MASTER NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm mb-4">
+        <div class="container-fluid px-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+                <div class="logo-box me-1">
+                    <img src="assets/cpeimg.jpg" alt="CpE Logo" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%23111317\'/><path d=\'M35 35 L50 50 L35 65 M50 35 L65 50 L50 65\' stroke=\'%23ffffff\' stroke-width=\'8\' stroke-linecap=\'round\' stroke-linejoin=\'round\' fill=\'none\'/></svg>';">
+                </div>
+                <span class="text-white">Computer Engineering</span>
+            </a>
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto fw-medium">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="what-is-cpe.html" class="nav-item nav-link">What is CpE?</a>
+                    <a href="cpe-at-ue.html" class="nav-item nav-link">CPE at UE</a>
+                    <a href="specializations.html" class="nav-item nav-link">Specializations</a>
+                    <a href="opportunities.html" class="nav-item nav-link active">Careers</a>
+                    <a href="faculty.html" class="nav-item nav-link">Faculty</a>
+                    <a href="scpes.html" class="nav-item nav-link">SCPES Organization</a>
+                    <a href="contact.html" class="nav-item nav-link">FAQ & Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SINGLE HERO BANNER -->
+    <div class="subpage-banner mb-5 rounded-3 overflow-hidden">
+        <img src="assets/opportunities.png" alt="Career Opportunities Banner" onerror="this.onerror=null; this.src='assets/cpeabout2.png';">
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="text-center mb-5">
+        <span class="badge rounded-pill mb-3 px-3 py-2 fw-semibold" style="color: #f87171; background-color: rgba(220, 38, 38, 0.15); border: 1px solid rgba(248, 113, 113, 0.3);">
+            <i class="bi bi-briefcase-fill me-1"></i> Career Pathways
+        </span>
+        <h1 class="fw-bold display-5 mb-3 hero-gradient-text">Opportunities & Careers</h1>
+        <p class="text-light opacity-75 lead fs-4 col-md-8 mx-auto fw-normal">
+            Computer engineers shape the digital world. Discover where a degree in CpE from UE can take your career.
+        </p>
+    </div>
+
+    <!-- CAREER ROLES GRID -->
+    <div class="row g-4 justify-content-center mb-5">
+        
+        <!-- Role 1 -->
+        <div class="col-md-6 col-lg-3">
+            <div class="crimson-card">
+                <div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-cpu-fill fs-2 me-2" style="color: #ef4444;"></i>
+                        <h3 class="fw-bold fs-5 text-white mb-0">Embedded Systems</h3>
+                    </div>
+                    <p class="text-light opacity-75 small mb-3">
+                        Design and program firmware for microcontrollers, smart devices, automotive systems, and IoT devices.
+                    </p>
+                    <ul class="list-unstyled text-light opacity-75 small mb-0">
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> Firmware Engineer</li>
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> IoT Solutions Developer</li>
+                        <li><i class="bi bi-check2 bullet-icon"></i> Robotics Engineer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="col-md-6 col-lg-3">
+            <div class="crimson-card">
+                <div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-code-square fs-2 me-2" style="color: #ef4444;"></i>
+                        <h3 class="fw-bold fs-5 text-white mb-0">Software & Systems</h3>
+                    </div>
+                    <p class="text-light opacity-75 small mb-3">
+                        Develop system-level applications, operating systems, full-stack software, and cloud interfaces.
+                    </p>
+                    <ul class="list-unstyled text-light opacity-75 small mb-0">
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> Software Engineer</li>
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> Systems Analyst</li>
+                        <li><i class="bi bi-check2 bullet-icon"></i> DevOps Specialist</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="col-md-6 col-lg-3">
+            <div class="crimson-card">
+                <div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-diagram-3-fill fs-2 me-2" style="color: #ef4444;"></i>
+                        <h3 class="fw-bold fs-5 text-white mb-0">Network & Security</h3>
+                    </div>
+                    <p class="text-light opacity-75 small mb-3">
+                        Build and secure enterprise networks, telecommunications infrastructure, and cloud data systems.
+                    </p>
+                    <ul class="list-unstyled text-light opacity-75 small mb-0">
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> Network Architect</li>
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> Cybersecurity Analyst</li>
+                        <li><i class="bi bi-check2 bullet-icon"></i> Cloud Infrastructure Admin</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Role 4 -->
+        <div class="col-md-6 col-lg-3">
+            <div class="crimson-card">
+                <div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-robot fs-2 me-2" style="color: #ef4444;"></i>
+                        <h3 class="fw-bold fs-5 text-white mb-0">AI & Hardware</h3>
+                    </div>
+                    <p class="text-light opacity-75 small mb-3">
+                        Architect digital integrated circuits, FPGA systems, and hardware accelerators for artificial intelligence.
+                    </p>
+                    <ul class="list-unstyled text-light opacity-75 small mb-0">
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> VLSI Design Engineer</li>
+                        <li class="mb-1"><i class="bi bi-check2 bullet-icon"></i> AI Hardware Specialist</li>
+                        <li><i class="bi bi-check2 bullet-icon"></i> Semiconductor Engineer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- INDUSTRY SECTORS TABLE -->
+    <div class="mb-5">
+        <h2 class="fw-bold fs-3 text-white mb-4 text-center">Top Hiring Industries</h2>
+        <div class="dark-table shadow-lg">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"><i class="bi bi-building me-2"></i>Industry Sector</th>
+                            <th scope="col"><i class="bi bi-gear me-2"></i>Primary Focus Areas</th>
+                            <th scope="col"><i class="bi bi-graph-up-arrow me-2"></i>Career Outlook</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold text-white">Semiconductor & Electronics</td>
+                            <td class="text-light opacity-75">Microchip testing, PCB design, integrated circuit development</td>
+                            <td><span class="badge bg-danger">High Demand</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-white">Information Technology & Software</td>
+                            <td class="text-light opacity-75">Enterprise software, cloud platforms, full-stack application development</td>
+                            <td><span class="badge bg-danger">High Demand</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-white">Telecommunications & Networking</td>
+                            <td class="text-light opacity-75">5G infrastructure, network security, optical communication systems</td>
+                            <td><span class="badge bg-danger">Steady Growth</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-white">Automation & Robotics</td>
+                            <td class="text-light opacity-75">Industrial automation, autonomous vehicles, smart sensor integration</td>
+                            <td><span class="badge bg-danger">Rapidly Emerging</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white rounded-3 py-4 mt-5 border border-secondary border-opacity-25">
+        <div class="container text-center">
+            <p class="fw-bold mb-1">BS Computer Engineering — University of the East Manila</p>
+            <p class="text-secondary small mb-2">College of Engineering | Department of Computer Engineering</p>
+            <div class="d-flex justify-content-center gap-3 small mb-2">
+                <a href="index.html" class="text-decoration-none text-secondary">Home</a>
+                <a href="what-is-cpe.html" class="text-decoration-none text-secondary">About</a>
+                <a href="scpes.html" class="text-decoration-none text-secondary">SCPES</a>
+                <a href="contact.html" class="text-decoration-none text-secondary">Contact & FAQ</a>
+            </div>
+            <p class="text-muted extra-small mb-0" style="font-size: 0.8rem;">&copy; UE Computer Engineering. All rights reserved.</p>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
