@@ -1,38 +1,85 @@
-/* ==========================================
-   1. GLOBAL & AMBIENT CRIMSON BACKGROUND
-   ========================================== */
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #0c0202;
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(153, 0, 0, 0.35) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(220, 38, 38, 0.25) 0px, transparent 50%),
-        radial-gradient(at 50% 100%, rgba(112, 2, 2, 0.3) 0px, transparent 50%),
-        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 10px, transparent 10px, transparent 20px);
-    background-attachment: fixed;
-    color: #f1f5f9;
-    min-height: 100vh;
+/* ============================================================
+   BS Computer Engineering & UE Crimson Theme — Unified Styles
+   ============================================================ */
+
+:root {
+    --bg-main: #090d16;
+    --bg-card: rgba(15, 23, 42, 0.75);
+    --border-card: rgba(255, 255, 255, 0.08);
+    
+    --ue-red: #dc2626;
+    --cyber-cyan: #38bdf8;
+    --cyber-blue: #0284c7;
+    --logic-green: #10b981;
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
 }
 
-h1, h2, h3, h4, h5, h6, .navbar-brand {
+/* 1. GLOBAL & CANVAS BACKGROUND */
+#cpe-bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(220, 38, 38, 0.2) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(15, 23, 42, 0.8) 0px, transparent 50%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 24px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 24px);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container-fluid, nav, footer {
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
     font-family: 'Space Grotesk', sans-serif;
     letter-spacing: -0.02em;
 }
 
 .hero-gradient-text {
-    background: linear-gradient(135deg, #ffffff 30%, #fca5a5 70%, #ef4444 100%);
+    background: linear-gradient(135deg, #ffffff 20%, #38bdf8 60%, #ef4444 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ==========================================
-   2. NAVBAR & BRANDING
-   ========================================== */
+/* Typewriter Cursor */
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--cyber-cyan);
+    font-weight: 700;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 2. NAVBAR & BRANDING */
 .custom-navbar {
-    background-color: #171b22 !important;
+    background-color: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 10px !important;
-    padding: 10px 16px !important;
+    border-radius: 12px !important;
+    padding: 10px 18px !important;
 }
 
 .custom-navbar .navbar-brand {
@@ -42,13 +89,13 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     letter-spacing: -0.01em;
 }
 
-/* Rounded square logo frame that crops white corner spots */
 .custom-navbar .logo-box {
     width: 36px;
     height: 36px;
-    border-radius: 9px;
+    border-radius: 8px;
     overflow: hidden;
-    background-color: #0c0d10;
+    background-color: #0b1120;
+    border: 1px solid rgba(56, 189, 248, 0.3);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +106,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.22);
+    transform: scale(1.1);
 }
 
 .custom-navbar .navbar-toggler {
@@ -72,14 +119,33 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-.nav-link.active {
-    color: #ef4444 !important;
-    font-weight: 700;
+.nav-link {
+    color: #cbd5e1 !important;
+    transition: color 0.2s ease;
 }
 
-/* ==========================================
-   3. HERO BANNER & CARDS
-   ========================================== */
+.nav-link:hover {
+    color: var(--cyber-cyan) !important;
+}
+
+.nav-link.active {
+    color: #38bdf8 !important;
+    font-weight: 700;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background: var(--cyber-cyan);
+    border-radius: 2px;
+}
+
+/* 3. HERO & CAROUSEL */
 .ue-red-hero {
     position: relative;
     background: 
@@ -107,6 +173,27 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     object-fit: cover;
 }
 
+#myCarousel {
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    max-height: 480px;
+    background-color: #0b1120;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 4. CARDS, GLOW & SPOTLIGHT */
 .ue-card {
     background: rgba(26, 8, 8, 0.85);
     border-radius: 20px;
@@ -114,6 +201,47 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     height: 100%;
     position: relative;
     overflow: hidden;
+}
+
+.apple-card {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--border-card);
+    padding: 24px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apple-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.12), transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.apple-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ef4444, #38bdf8, #10b981);
+    opacity: 0.7;
+}
+
+.apple-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.15);
 }
 
 .icon-box {
@@ -149,4 +277,62 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     background: linear-gradient(135deg, #450000 0%, #800000 50%, #1a0000 100%);
     border-radius: 24px;
     border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.card-img-container {
+    margin-top: 10px;
+    width: 100%;
+    background-color: rgba(2, 6, 23, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.apple-card:hover .card-img-container img {
+    transform: scale(1.04);
+}
+
+/* Badges & Buttons */
+.card-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.badge-blue { background-color: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-red { background-color: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+.badge-purple { background-color: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+.badge-cyan { background-color: rgba(20, 184, 166, 0.15); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.3); }
+
+.btn-apple {
+    background: linear-gradient(135deg, #dc2626 0%, #0284c7 100%);
+    color: #ffffff !important;
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+    transition: all 0.25s ease;
+}
+
+.btn-apple:hover {
+    background: linear-gradient(135deg, #ef4444 0%, #38bdf8 100%);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+    transform: scale(1.03);
 }

@@ -30,6 +30,20 @@
             min-height: 100vh;
         }
 
+        /* CIRCUIT-TRACE CANVAS — sits behind all content */
+        #circuit {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            display: block;
+            pointer-events: none;
+        }
+
+        .container-fluid {
+            position: relative;
+            z-index: 1;
+        }
+
         /* 2. HEADINGS & GRADIENT ACCENTS */
         h1, h2, h3, h4, h5, h6, .navbar-brand {
             font-family: 'Space Grotesk', sans-serif;
@@ -199,6 +213,8 @@
     </style>
 </head>
 <body>
+
+<canvas id="circuit"></canvas>
 
 <div class="container-fluid px-4 my-4">
 
@@ -522,6 +538,8 @@
     </footer>
 
 </div>
+
+<script src="circuit.js"></script>
 
 </body>
 </html>
