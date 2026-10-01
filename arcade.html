@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BS Computer Engineering | Arcade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="arcade.css">
+</head>
+<body>
+<canvas id="circuit"></canvas>
+<div class="container-fluid px-4 my-4">
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm mb-4">
+  <div class="container-fluid px-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+      <div class="logo-box me-1"><img src="assets/cpeimg.jpg" alt="CpE Logo" class="logo-img"></div>
+      <span class="text-white">Computer Engineering</span>
+    </a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto fw-medium align-items-lg-center">
+        <a href="index.html" class="nav-item nav-link">Home</a>
+        <a href="what-is-cpe.html" class="nav-item nav-link">What is CpE?</a>
+        <a href="cpe-at-ue.html" class="nav-item nav-link">CPE at UE</a>
+        <a href="specializations.html" class="nav-item nav-link">Specializations</a>
+        <a href="opportunities.html" class="nav-item nav-link">Careers</a>
+        <a href="faculty.html" class="nav-item nav-link">Faculty</a>
+        <a href="scpes.html" class="nav-item nav-link">SCPES Organization</a>
+        <a href="contact.html" class="nav-item nav-link">FAQ & Contact</a>
+        <a href="arcade.html" class="nav-item nav-link nav-arcade active"><i class="bi bi-controller me-1"></i>Arcade</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="text-center mb-4">
+  <h1 class="fw-bold display-5 hero-gradient-text mb-2">CpE Arcade</h1>
+  <p class="text-light opacity-75 col-md-7 mx-auto">Three quick games to sharpen the basics: binary, logic gates, and computer hardware.</p>
+</div>
+
+<ul class="nav nav-pills game-tabs justify-content-center gap-2 mb-4" role="tablist">
+  <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#g1" type="button">Binary Blaster</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#g2" type="button">Gate Rush</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#g3" type="button">Hardware Match</button></li>
+</ul>
+
+<div class="tab-content col-lg-8 mx-auto">
+
+<!-- GAME 1 -->
+<div class="tab-pane fade show active" id="g1">
+ <div class="apple-card text-center">
+  <h3 class="fw-bold mb-1">Binary Blaster</h3>
+  <p class="text-secondary small">Tap the bits so they add up to the decimal number. You have 45 seconds.</p>
+  <div class="hud"><span>Score <b id="b-score">0</b></span><span>Time <b id="b-time">45</b></span></div>
+  <div class="target mb-3" id="b-target">–</div>
+  <div class="bits mb-3" id="b-bits"></div>
+  <div class="msg mb-3" id="b-msg">Press Start to play.</div>
+  <button class="btn-apple" id="b-start">Start</button>
+ </div>
+</div>
+
+<!-- GAME 2 -->
+<div class="tab-pane fade" id="g2">
+ <div class="apple-card text-center">
+  <h3 class="fw-bold mb-1">Gate Rush</h3>
+  <p class="text-secondary small">Work out the output of each logic gate. 10 rounds, streaks earn bonus points.</p>
+  <div class="hud"><span>Score <b id="l-score">0</b></span><span>Streak <b id="l-streak">0</b></span><span>Round <b id="l-round">0</b>/10</span></div>
+  <div class="gate mb-2" id="l-gate">A ? B</div>
+  <div class="choices"><button class="btn-apple" data-ans="0">0</button><button class="btn-apple" data-ans="1">1</button></div>
+  <div class="msg mt-3 mb-3" id="l-msg">Press Start to play.</div>
+  <button class="btn-apple" id="l-start">Start</button>
+ </div>
+</div>
+
+<!-- GAME 3 -->
+<div class="tab-pane fade" id="g3">
+ <div class="apple-card text-center">
+  <h3 class="fw-bold mb-1">Hardware Match</h3>
+  <p class="text-secondary small">Flip two cards to match each component with what it does.</p>
+  <div class="hud"><span>Moves <b id="m-moves">0</b></span><span>Pairs <b id="m-pairs">0</b>/6</span></div>
+  <div class="mem-grid mb-3" id="m-grid"></div>
+  <div class="msg mb-3" id="m-msg"></div>
+  <button class="btn-apple" id="m-start">New game</button>
+ </div>
+</div>
+
+</div>
+
+<footer class="footer-crimson text-white rounded-3 py-4 mt-5">
+  <div class="container text-center">
+    <p class="fw-bold mb-1">BS Computer Engineering — University of the East Manila</p>
+    <p class="small mb-2" style="color:rgba(255,255,255,.8)">College of Engineering | Department of Computer Engineering</p>
+    <div class="d-flex justify-content-center gap-3 small mb-2">
+      <a href="index.html" class="text-decoration-none">Home</a>
+      <a href="what-is-cpe.html" class="text-decoration-none">About</a>
+      <a href="scpes.html" class="text-decoration-none">SCPES</a>
+      <a href="contact.html" class="text-decoration-none">Contact & FAQ</a>
+    </div>
+    <p class="mb-0" style="font-size:.8rem;color:rgba(255,255,255,.7)">&copy; UE Computer Engineering. All rights reserved.</p>
+  </div>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id), rnd=n=>Math.floor(Math.random()*n);
+
+/* ---------- Game 1: Binary Blaster ---------- */
+(()=>{
+  let score=0,time=45,timer=null,target=0,bits=[0,0,0,0,0,0];
+  const box=$('b-bits');
+  box.innerHTML=[32,16,8,4,2,1].map((v,i)=>`<button class="bit" data-i="${i}" aria-label="Bit worth ${v}" disabled>0<small>${v}</small></button>`).join('');
+  const val=()=>bits.reduce((s,b,i)=>s+b*[32,16,8,4,2,1][i],0);
+  const draw=()=>box.querySelectorAll('.bit').forEach((el,i)=>{el.classList.toggle('on',!!bits[i]);el.firstChild.nodeValue=bits[i]});
+  function next(){bits=[0,0,0,0,0,0];target=1+rnd(63);$('b-target').textContent=target;draw()}
+  function end(){clearInterval(timer);box.querySelectorAll('.bit').forEach(b=>b.disabled=true);$('b-target').textContent='–';$('b-msg').innerHTML=`Time's up! Final score: <b>${score}</b>`;$('b-start').textContent='Play again'}
+  $('b-start').onclick=()=>{score=0;time=45;$('b-score').textContent=0;$('b-time').textContent=time;$('b-msg').textContent='';box.querySelectorAll('.bit').forEach(b=>b.disabled=false);next();clearInterval(timer);
+    timer=setInterval(()=>{$('b-time').textContent=--time;if(time<=0)end()},1000)};
+  box.onclick=e=>{const b=e.target.closest('.bit');if(!b||b.disabled)return;const i=+b.dataset.i;bits[i]^=1;draw();
+    if(val()===target){score+=10;$('b-score').textContent=score;$('b-msg').innerHTML='<span class="ok">Correct! +10</span>';next()}};
+})();
+
+/* ---------- Game 2: Gate Rush ---------- */
+(()=>{
+  const gates={AND:(a,b)=>a&b,OR:(a,b)=>a|b,XOR:(a,b)=>a^b,NAND:(a,b)=>+!(a&b),NOR:(a,b)=>+!(a|b),XNOR:(a,b)=>+!(a^b)};
+  let score,streak,round,ans,live=false;
+  const btns=document.querySelectorAll('#g2 [data-ans]');
+  function next(){
+    if(round===10){live=false;$('l-gate').textContent='A ? B';$('l-msg').innerHTML=`Done! Final score: <b>${score}</b>`;$('l-start').textContent='Play again';return}
+    round++;$('l-round').textContent=round;
+    const n=Object.keys(gates)[rnd(6)],a=rnd(2),b=rnd(2);ans=gates[n](a,b);
+    $('l-gate').innerHTML=`${a} <span class="op">${n}</span> ${b}`;
+  }
+  $('l-start').onclick=()=>{score=0;streak=0;round=0;live=true;$('l-score').textContent=0;$('l-streak').textContent=0;$('l-msg').textContent='';next()};
+  btns.forEach(b=>b.onclick=()=>{if(!live)return;
+    if(+b.dataset.ans===ans){streak++;score+=10+Math.min(streak-1,5)*2;$('l-msg').innerHTML='<span class="ok">Correct!</span>'}
+    else{streak=0;$('l-msg').innerHTML=`<span class="bad">Wrong. The answer was ${ans}.</span>`}
+    $('l-score').textContent=score;$('l-streak').textContent=streak;next()});
+})();
+
+/* ---------- Game 3: Hardware Match ---------- */
+(()=>{
+  const pairs=[['CPU','Runs program instructions'],['RAM','Fast, temporary memory'],['ROM','Permanent firmware storage'],['ALU','Does math and logic'],['GPU','Parallel graphics processing'],['ADC','Analog to digital converter']];
+  let first=null,lock=false,moves,found;
+  function build(){
+    moves=0;found=0;first=null;lock=false;$('m-moves').textContent=0;$('m-pairs').textContent=0;$('m-msg').textContent='';
+    const deck=pairs.flatMap((p,i)=>[{id:i,t:p[0]},{id:i,t:p[1]}]).sort(()=>Math.random()-.5);
+    $('m-grid').innerHTML=deck.map((c,k)=>`<button class="mem-card down" data-id="${c.id}" data-t="${c.t}" aria-label="Hidden card ${k+1}">?</button>`).join('');
+  }
+  $('m-grid').onclick=e=>{
+    const c=e.target.closest('.mem-card');if(!c||lock||!c.classList.contains('down'))return;
+    c.classList.remove('down');c.textContent=c.dataset.t;
+    if(!first){first=c;return}
+    moves++;$('m-moves').textContent=moves;
+    if(first.dataset.id===c.dataset.id){first.classList.add('matched');c.classList.add('matched');first=null;$('m-pairs').textContent=++found;
+      if(found===6)$('m-msg').innerHTML=`<span class="ok">All matched in ${moves} moves!</span>`}
+    else{lock=true;const a=first;first=null;setTimeout(()=>{[a,c].forEach(x=>{x.classList.add('down');x.textContent='?'});lock=false},900)}
+  };
+  $('m-start').onclick=build;build();
+})();
+</script>
+<script src="circuit.js"></script>
+</body>
+</html>

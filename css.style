@@ -337,3 +337,99 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
     transform: scale(1.03);
 }
 
+/* ============================================================
+   Arcade page styles — loads AFTER style.css
+   ============================================================ */
+
+/* --- NAV ARCADE BUTTON (move this block into style.css so every page gets it) --- */
+.custom-navbar .nav-link.nav-arcade {
+    background: linear-gradient(135deg, #dc2626 0%, #0284c7 100%);
+    color: #ffffff !important;
+    border-radius: 50px;
+    padding: 6px 16px !important;
+    margin-left: 6px;
+    font-weight: 700;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+.custom-navbar .nav-link.nav-arcade:hover {
+    background: linear-gradient(135deg, #ef4444 0%, #38bdf8 100%);
+    color: #ffffff !important;
+}
+.custom-navbar .nav-link.nav-arcade::after { display: none; }
+
+/* --- CIRCUIT CANVAS (used by circuit.js on this page) --- */
+#circuit { position: fixed; inset: 0; z-index: 0; display: block; pointer-events: none; }
+
+/* --- GAME TABS --- */
+.game-tabs .nav-link { border-radius: 980px; font-weight: 600; font-family: 'Space Grotesk', sans-serif; }
+.game-tabs .nav-link.active {
+    background: linear-gradient(135deg, #dc2626 0%, #0284c7 100%);
+    color: #ffffff !important;
+}
+.game-tabs .nav-link.active::after { display: none; }
+
+/* --- SHARED GAME UI --- */
+.hud { display: flex; justify-content: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin-bottom: 18px; }
+.hud b { color: var(--cyber-cyan); }
+.msg { min-height: 1.6em; font-weight: 600; }
+.ok { color: var(--logic-green); }
+.bad { color: #f87171; }
+.btn-apple:focus-visible, .bit:focus-visible, .mem-card:focus-visible { outline: 3px solid var(--cyber-cyan); outline-offset: 2px; }
+
+/* --- BINARY BLASTER --- */
+.target { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 700; }
+.bits { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.bit {
+    width: 62px; height: 76px; border-radius: 12px;
+    border: 1px solid var(--border-card); background: rgba(2, 6, 23, 0.6); color: var(--cyber-cyan);
+    font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    line-height: 1.1; cursor: pointer; transition: all 0.15s;
+}
+.bit small { font-size: 0.7rem; font-weight: 500; color: var(--text-secondary); }
+.bit.on { background: linear-gradient(135deg, #dc2626 0%, #0284c7 100%); color: #fff; box-shadow: 0 0 14px rgba(56, 189, 248, 0.5); }
+.bit.on small { color: rgba(255, 255, 255, 0.8); }
+
+/* --- GATE RUSH --- */
+.gate {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 700;
+    padding: 18px 28px; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 16px; background: rgba(2, 6, 23, 0.5);
+}
+.gate .op { color: var(--cyber-cyan); }
+.choices { display: flex; justify-content: center; gap: 16px; margin-top: 20px; }
+.choices .btn-apple { min-width: 90px; font-size: 1.4rem; }
+
+/* --- HARDWARE MATCH --- */
+.mem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 560px; margin: 0 auto; }
+.mem-card {
+    aspect-ratio: 1.2 / 1; border-radius: 12px; border: 1px solid var(--border-card);
+    background: rgba(2, 6, 23, 0.6); color: #fff;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 6px; font-size: 0.82rem; font-weight: 600; cursor: pointer;
+}
+.mem-card.down { background: linear-gradient(135deg, #dc2626 0%, #0284c7 100%); font-size: 1.6rem; }
+.mem-card.matched { background: rgba(16, 185, 129, 0.15); border-color: var(--logic-green); color: #a7f3d0; cursor: default; }
+
+/* --- CRIMSON FOOTER --- */
+.footer-crimson {
+    background: linear-gradient(135deg, #dc2626 0%, #990000 100%);
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-radius: 20px !important;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+    position: relative; overflow: hidden;
+}
+.footer-crimson::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #ffffff, #fca5a5, #ffffff); opacity: 0.8;
+}
+.footer-crimson a { color: rgba(255, 255, 255, 0.85); transition: color 0.2s ease; }
+.footer-crimson a:hover { color: #ffffff; text-decoration: underline !important; }
+
+@media (max-width: 576px) {
+    .bit { width: 42px; height: 60px; font-size: 1.3rem; }
+    .mem-grid { grid-template-columns: repeat(3, 1fr); }
+    .target { font-size: 3rem; }
+    .gate { font-size: 1.5rem; padding: 14px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
