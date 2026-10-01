@@ -336,3 +336,4 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn-apple {
     box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
     transform: scale(1.03);
 }
+
